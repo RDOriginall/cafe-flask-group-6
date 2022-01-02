@@ -10,6 +10,7 @@ class Manager:
         self.email = email
         self.password = password
 
+    # database
     def add_to_database(self):
         conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
                                 host='john.db.elephantsql.com', port='5432')

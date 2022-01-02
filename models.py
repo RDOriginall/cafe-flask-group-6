@@ -75,10 +75,11 @@ class MenuItem:
 
 class OrderList:
     def __init__(self, menu_item_id, number, reciept_id, manager_id):
-        self.get_menu_item(menu_item_id)
+        self.menu_item = self.get_menu_item(menu_item_id)
         self.number = number
         self.reciept_id = reciept_id
         self.manager_id = manager_id
+        self.status = 'cooking'
 
     def get_menu_item(self, menu_item_id):
         conn = OrderList.start_database()
@@ -86,8 +87,9 @@ class OrderList:
             with conn.cursor() as curs:
                 curs.execute("SELECT * FROM menu_item WHERE menu_item.id = %s", (menu_item_id,))
                 data = curs.fetchone()
-                self.menu_item = MenuItem(*data)
+                menu_item = MenuItem(*data)
         conn.close()
+        return menu_item
         # logging
 
     @staticmethod

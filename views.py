@@ -1,6 +1,9 @@
 from flask import render_template
 
 
+def index():
+    return render_template('index.html')
+
 def menu_items():
     # How to get menu from database
     menu = [

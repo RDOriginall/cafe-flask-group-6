@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="cafe" uuid="caa8c2bf-94b7-40c2-867c-9f1c27ccb779">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>postgres://pwqucdjl:Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x@john.db.elephantsql.com/pwqucdjl</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://john.db.elephantsql.com:5432/pwqucdjl</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

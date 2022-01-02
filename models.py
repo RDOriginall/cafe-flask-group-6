@@ -62,12 +62,3 @@ class Manager:
             "password": self.password
         })
 
-        # conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
-        #                         host='john.db.elephantsql.com', port='5432')
-        # cur = conn.cursor()
-        # cur.execute("""
-        # INSERT INTO manager (first_name, last_name, phone_number, email, password)
-        # VALUES (%s, %s, %s, %s, %s);
-        # """, (self.first_name, self.last_name, self.phone_number, self.email, self.password))
-        # cur.close()
-        # conn.close()

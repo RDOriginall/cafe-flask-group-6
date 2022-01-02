@@ -20,6 +20,7 @@ class Manager:
                     "INSERT INTO manager(first_name, last_name, phone_number, email, password) VALUES (%s,%s,%s,%s,%s);"
                     , (self.first_name, self.last_name, self.phone_number, self.email, self.password))
         conn.close()
+        # logging
 
 
 class MenuItem:
@@ -39,3 +40,4 @@ class MenuItem:
                     "INSERT INTO menu_item(name, price, discount, category_id, manager_id) VALUES (%s,%s,%s,%s,%s);"
                     , (self.name, self.price, self.discount, self.category_id, self.manager_id))
         conn.close()
+        # logging

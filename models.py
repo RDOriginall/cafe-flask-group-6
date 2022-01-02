@@ -10,10 +10,8 @@ class Manager:
         self.email = email
         self.password = password
 
-    # database
     def add_to_database(self):
-        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
-                                host='john.db.elephantsql.com', port='5432')
+        conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
@@ -22,8 +20,12 @@ class Manager:
                 # finding id of instance
                 curs.execute("SELECT * FROM manager;")
                 self.id = curs.fetchall()[-1][0]
-        conn.close()
-        # logging
+        conn.close()  # logging
+
+    @staticmethod
+    def start_database():
+        return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
 
 
 class MenuItem:

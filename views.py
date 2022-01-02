@@ -1,8 +1,10 @@
 from flask import render_template, request
 from models import *
 
+
 def index():
     return render_template('index.html')
+
 
 def menu_items():
     # How to get menu from database
@@ -15,6 +17,7 @@ def menu_items():
         {'name': 'Pizza Pepperooni', 'price': '65', 'category': 'dinner'}
     ]
     return render_template('menu.html', menu=menu)
+
 
 def add_manager():
     if request.method == 'GET':

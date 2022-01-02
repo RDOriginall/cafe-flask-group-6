@@ -2,7 +2,6 @@ import psycopg2
 
 
 class Manager:
-
     def __init__(self, first_name, last_name, phone_number, email, password):
         self.first_name = first_name
         self.last_name = last_name
@@ -65,6 +64,29 @@ class MenuItem:
             with conn.cursor() as curs:
                 curs.execute(
                     "DELETE FROM menu_item WHERE menu_item.id = %s;", (self.id,))
+        conn.close()
+        # logging
+
+    @staticmethod
+    def start_database():
+        return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+
+
+class OrderList:
+    def __init__(self, menu_item_id, number, reciept_id, manager_id):
+        self.get_menu_item(menu_item_id)
+        self.number = number
+        self.reciept_id = reciept_id
+        self.manager_id = manager_id
+
+    def get_menu_item(self, menu_item_id):
+        conn = OrderList.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM menu_item WHERE menu_item.id = %s", (menu_item_id,))
+                data = curs.fetchone()
+                self.menu_item = MenuItem(*data)
         conn.close()
         # logging
 

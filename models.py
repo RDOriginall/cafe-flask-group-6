@@ -35,8 +35,7 @@ class MenuItem:
         self.manager_id = manager_id
 
     def add_to_database(self):
-        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
-                                host='john.db.elephantsql.com', port='5432')
+        conn = MenuItem.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
@@ -49,8 +48,7 @@ class MenuItem:
         # logging
 
     def update_database(self):
-        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
-                                host='john.db.elephantsql.com', port='5432')
+        conn = MenuItem.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
@@ -60,8 +58,7 @@ class MenuItem:
         # logging
 
     def delete_from_database(self):
-        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
-                                host='john.db.elephantsql.com', port='5432')
+        conn = MenuItem.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
@@ -70,6 +67,6 @@ class MenuItem:
         # logging
 
     @staticmethod
-    def start_db():
+    def start_database():
         return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
                                 host='john.db.elephantsql.com', port='5432')

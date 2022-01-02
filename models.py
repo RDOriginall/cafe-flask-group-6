@@ -68,3 +68,8 @@ class MenuItem:
                     "DELETE FROM menu_item WHERE menu_item.id = %s;", (self.id,))
         conn.close()
         # logging
+
+    @staticmethod
+    def start_db():
+        return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')

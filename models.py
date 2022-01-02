@@ -48,7 +48,7 @@ class MenuItem:
         conn.close()
         # logging
 
-    def update_item(self):
+    def update_database(self):
         conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
                                 host='john.db.elephantsql.com', port='5432')
         with conn:
@@ -56,5 +56,15 @@ class MenuItem:
                 curs.execute(
                     "UPDATE menu_item SET name = %s, price = %s, discount = %s, category_id = %s, manager_id = %s) WHERE menu_item.id = %s;"
                     , (self.name, self.price, self.discount, self.category_id, self.manager_id, self.id))
+        conn.close()
+        # logging
+
+    def delete_from_database(self):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(
+                    "DELETE FROM menu_item WHERE menu_item.id = %s;", (self.id,))
         conn.close()
         # logging

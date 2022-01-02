@@ -33,10 +33,6 @@ class MenuItem:
         self.discount = discount
         self.category_id = category_id
         self.manager_id = manager_id
-        self.set_id()
-
-    def set_id(self):
-        self.id = ''
 
     def add_to_database(self):
         conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",

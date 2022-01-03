@@ -95,18 +95,24 @@ class MenuItem:
 
 class OrderList:
     def __init__(self, menu_item_id, number, reciept_id, manager_id):
-        self.menu_item = self.get_menu_item(menu_item_id)
+        self.menu_item = MenuItem.get_by_id(menu_item_id)
         self.number = number
-        self.reciept_id = reciept_id
+        self.reciept_id = reciept_id  # Reciept.get_by_id(reciept_id)
         self.manager_id = manager_id
         self.status = 'cooking'
 
-    def get_menu_item(self, menu_item_id):
-        return MenuItem.get_by_id(menu_item_id)
-        # logging
-
     def set_status(self):
         pass  # TODO
+
+    @classmethod
+    def get_by_id(cls, obj_id):
+        conn = cls.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM order_list WHERE manager.id = %s;", (obj_id,))
+                obj = cls(*curs.fetchone())
+        conn.close()
+        return obj
 
     @staticmethod
     def start_database():

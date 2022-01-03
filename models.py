@@ -77,6 +77,16 @@ class MenuItem:
         conn.close()
         # logging
 
+    @classmethod
+    def get_by_id(cls, obj_id):
+        conn = cls.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM menu_item WHERE manager.id = %s;", (obj_id,))
+                obj = cls(*curs.fetchone())
+        conn.close()
+        return obj
+
     @staticmethod
     def start_database():
         return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",

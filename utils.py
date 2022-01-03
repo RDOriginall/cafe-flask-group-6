@@ -11,5 +11,12 @@ def menu_data():
     conn.close()
     menu = []
     for item in menu_list:
-        menu.append({'name': item[1], 'price': item[2], 'category': item[4]})
+        menu.append({'id': item[0], 'name': item[1], 'price': item[2], 'category': item[4]})
     return menu
+
+
+def image_urls(n):
+    urls = []
+    for i in range(1, n + 2):
+        urls.append(f"https://picsum.photos/200/200?random={i}")
+    return urls

@@ -102,14 +102,7 @@ class OrderList:
         self.status = 'cooking'
 
     def get_menu_item(self, menu_item_id):
-        conn = OrderList.start_database()
-        with conn:
-            with conn.cursor() as curs:
-                curs.execute("SELECT * FROM menu_item WHERE menu_item.id = %s", (menu_item_id,))
-                data = curs.fetchone()
-                menu_item = MenuItem(*data)
-        conn.close()
-        return menu_item
+        return MenuItem.get_by_id(menu_item_id)
         # logging
 
     def set_status(self):

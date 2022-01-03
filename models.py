@@ -110,7 +110,7 @@ class OrderList:
         with conn:
             with conn.cursor() as curs:
                 curs.execute("SELECT * FROM order_list WHERE manager.id = %s;", (obj_id,))
-                obj = cls(*curs.fetchone())
+                obj = cls(*curs.fetchone())  # TODO It's Wrong, Make it write.
         conn.close()
         return obj
 

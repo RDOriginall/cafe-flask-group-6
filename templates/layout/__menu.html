@@ -1,1 +1,25 @@
 <h1 id="menu">menu</h1>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        {% for item in menu %}
+            <div class="col-4 col-md-3 m-0 p-2 bg-warning h-auto border">
+                <div class="row">
+                    <img src="{{ images[item['id']] }}" alt="">
+                </div>
+                <div class="row">
+                    <span>name = {{ item['name'].title() }}</span>
+                </div>
+                <div class="row">
+                    <span>price = {{ item['price'] }}</span>
+                </div>
+                <div class="row">
+                    <span>category = {{ item['category'] }}</span>
+                </div>
+                <div class="row justify-content-between px-3">
+                    <input type="number" class="w-25">
+                    <input type="button" value="Add" class="btn btn-outline-primary w-50">
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

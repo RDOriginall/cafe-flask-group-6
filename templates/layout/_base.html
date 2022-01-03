@@ -5,13 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../static/CSS/bootstrap.min.css">
+    {% include "layout/_stylesheet.html" %}
     <title>Cafe Page</title>
 </head>
 <body>
 {% include "layout/__navbar.html" %}
 {% block body %}
-    <h1 class="text-center">hi!</h1>
     {% include "layout/__home.html" %}
     {% include "layout/__about.html" %}
     {% include "layout/__contact.html" %}

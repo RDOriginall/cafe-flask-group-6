@@ -3,33 +3,101 @@
         <h1 class="p-3">Menu</h1>
     </div>
     <div class="row w-100 pb-5">
-        <div class="col-2"></div>
-        <div class="col-8">
+        <div class="col"></div>
+        <div class="col-md-10 col-12">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    {% for item in menu %}
-                        <div class="col-4 col-md-3 m-0 p-2 bg-warning h-auto border">
-                            <div class="row">
-                                <img src="{{ images[item['id']] }}" alt="">
-                            </div>
-                            <div class="row">
-                                <span>name = {{ item['name'].title() }}</span>
-                            </div>
-                            <div class="row">
-                                <span>price = {{ item['price'] }}</span>
-                            </div>
-                            <div class="row">
-                                <span>category = {{ item['category'] }}</span>
-                            </div>
-                            <div class="row justify-content-between px-3">
-                                <input type="number" class="w-25">
-                                <input type="button" value="Add" class="btn btn-outline-primary w-50">
-                            </div>
-                        </div>
-                    {% endfor %}
+                    <h2>Breakfast</h2>
+                    <div class="row justify-content-center">
+                        {% for item in menu %}
+                            {% if item['category']==1 %}
+                                <div class="col-4 col-md-3 m-1 p-2 bg-warning h-auto border"
+                                     style="border-radius: 20px;">
+                                    <div class="row">
+                                        <img src="{{ images[item['id']] }}" alt=""
+                                             style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                                    </div>
+                                    <div class="row">
+                                        <span class="bg-danger text-white rounded-pill w-auto"
+                                              style="font-size: 20px">{{ item['name'].title() }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>price = {{ item['price'] }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>category = {{ item['category'] }}</span>
+                                    </div>
+                                    <div class="row justify-content-between px-3">
+                                        <input type="number" class="w-25">
+                                        <input type="button" value="Add" class="btn btn-outline-primary w-50">
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <h2>Lunch</h2>
+                    <div class="row justify-content-center">
+                        {% for item in menu %}
+                            {% if item['category']==2 %}
+                                <div class="col-4 col-md-3 m-1 p-2 bg-warning h-auto border"
+                                     style="border-radius: 20px;">
+                                    <div class="row">
+                                        <img src="{{ images[item['id']] }}" alt=""
+                                             style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                                    </div>
+                                    <div class="row">
+                                        <span class="bg-danger text-white rounded-pill w-auto"
+                                              style="font-size: 20px">{{ item['name'].title() }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>price = {{ item['price'] }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>category = {{ item['category'] }}</span>
+                                    </div>
+                                    <div class="row justify-content-between px-3">
+                                        <input type="number" class="w-25">
+                                        <input type="button" value="Add" class="btn btn-outline-primary w-50">
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <h2>Dinner</h2>
+                    <div class="row justify-content-center">
+                        {% for item in menu %}
+                            {% if item['category']==3 %}
+                                <div class="col-4 col-md-3 m-1 p-2 bg-warning h-auto border"
+                                     style="border-radius: 20px;">
+                                    <div class="row">
+                                        <img src="{{ images[item['id']] }}" alt=""
+                                             style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                                    </div>
+                                    <div class="row">
+                                        <span class="bg-danger text-white rounded-pill w-auto"
+                                              style="font-size: 20px">{{ item['name'].title() }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>price = {{ item['price'] }}</span>
+                                    </div>
+                                    <div class="row">
+                                        <span>category = {{ item['category'] }}</span>
+                                    </div>
+                                    <div class="row justify-content-between px-3">
+                                        <input type="number" class="w-25">
+                                        <input type="button" value="Add" class="btn btn-outline-primary w-50">
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+            </div>
         </div>
-    <div class="col-2"></div>
+        <div class="col"></div>
     </div>
 </div>

@@ -4,6 +4,12 @@ from utils import *
 
 
 def index():
+    if request.method == 'GET':
+        menu = menu_data()
+        images = image_urls(len(menu))
+        return render_template('index.html', menu=menu, images=images)
+    elif request.method == 'POST':
+        return "Message received!\nThank you."
     return render_template('index.html')
 
 

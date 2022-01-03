@@ -1,5 +1,6 @@
 from flask import render_template, request
 from models import *
+from utils import menu_json
 
 
 def index():
@@ -7,6 +8,7 @@ def index():
 
 
 def menu_items():
+    # menu_items = menu_json()
     # How to get menu from database
     menu = [
         {'name': 'Tea', 'price': '10', 'category': 'breakfast'},
@@ -17,6 +19,22 @@ def menu_items():
         {'name': 'Pizza Pepperooni', 'price': '65', 'category': 'dinner'}
     ]
     return render_template('menu.html', menu=menu)
+
+
+def add_menu_items():
+    if request.method == 'GET':
+        return render_template('add_menu.html')
+    elif request.method == 'POST':
+        name = request.form.get('name')
+        price = request.form.get('price')
+        discount = request.form.get('discount')
+        category_id = request.form.get('category_id')
+        manager_id = request.form.get('manager_id')
+        item = MenuItem(name, price, discount, category_id, manager_id)
+        item.add_to_database()
+        return 'successful!\nItem added to menu.'
+    else:
+        return "Invalid Request!"
 
 
 def add_manager():

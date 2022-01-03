@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add menu item</title>
+</head>
+<body>
+<form action="{{ url_for("add_menu_item") }}" method="POST">
+    <label for="name">name</label>
+    <input type="text" id="name" name="name">
+    <label for="price">price</label>
+    <input type="text" id="price" name="price">
+    <label for="discount">discount</label>
+    <input type="text" id="discount" name="discount">
+    <label for="category_id">category</label>
+    <input type="text" id="category_id" name="category_id">
+    <label for="manager_id">manager</label>
+    <input type="text" id="manager_id" name="manager_id">
+    <input type="submit" value="Add Menu Item">
+</form>
+</body>
+</html>

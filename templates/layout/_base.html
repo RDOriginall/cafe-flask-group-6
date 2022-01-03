@@ -9,12 +9,13 @@
     <title>Cafe Page</title>
 </head>
 <body>
-{% include "layout/__navbar.html" %}
 {% block body %}
+    {% include "layout/__navbar.html" %}
     {% include "layout/__home.html" %}
     {% include "layout/__about.html" %}
     {% include "layout/__menu.html" %}
     {% include "layout/__contact.html" %}
+    {% include 'layout/__footer.html' %}
 {% endblock %}
 </body>
 </html>

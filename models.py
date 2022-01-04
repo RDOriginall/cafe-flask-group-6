@@ -127,3 +127,24 @@ class OrderList:
     def start_database():
         return psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
                                 host='john.db.elephantsql.com', port='5432')
+
+
+class Table():
+    def __init__(self):
+        self.table_id = table_id
+        
+    def add_to_db(self): # add a table
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x", host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("INSERT INTO table VALUES (default);")
+                curs.execute("SELECT * FROM table;")
+                self.table_id = curs.fetchall()[-1][0]
+        conn.close()
+
+    def delete_from_db(self): # delete a table
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x", host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("DELETE FROM manager WHERE table.id = %s;", (self.table_id))
+        conn.close()

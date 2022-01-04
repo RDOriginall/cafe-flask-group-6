@@ -7,6 +7,7 @@ app.add_url_rule('/', 'index', index, methods=['GET', 'POST'])
 app.add_url_rule('/manager/', 'add_manager', add_manager, methods=['GET', 'POST'])
 app.add_url_rule('/menu/', 'menu', menu_items)
 app.add_url_rule('/add_menu_item/', 'add_menu_item', add_menu_items, methods=['GET', 'POST'])
+app.add_url_rule('/dashboard', 'dashboard', dashboard)
 
 if __name__ == '__main__':
     app.run()

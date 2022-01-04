@@ -45,7 +45,7 @@ class Manager:
         conn.close()
         
         
-    def edit_in_db(self, first_name, last_name, phone_number, email, password): # edit a manager's information
+    def edit_in_db(self): # edit a manager's information
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:

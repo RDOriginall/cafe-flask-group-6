@@ -18,7 +18,7 @@ class Manager:
                     , (self.first_name, self.last_name, self.phone_number, self.email, self.password))
                 # finding id of instance
                 curs.execute("SELECT * FROM manager;")
-                self.id = curs.fetchall()[-1][0]
+                self.manager_id = curs.fetchall()[-1][0]
         conn.close()  # logging
 
     @classmethod

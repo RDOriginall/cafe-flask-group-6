@@ -51,5 +51,6 @@ def add_manager():
     else:
         return 'Not Valid request!', 403
 
+
 def dashboard():
     return render_template('dashboard.html')

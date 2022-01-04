@@ -56,7 +56,7 @@
             <a class="nav-opt nav-link" href="#">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-opt nav-link" href="menu.html">Menu Items</a>
+            <a class="nav-opt nav-link" href="{{ url_for('add_menu_item') }}">Menu Items</a>
           </li>
           <li class="nav-item">
             <a class="nav-opt nav-link" href="#">Tables</a>
@@ -80,12 +80,12 @@
                 <div class="row g-0">
                   <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                     <img
-                      src="https://uniondocs.org/wp-content/uploads/2019/03/HK-SF-square-profile-pic-300x300.jpg"
+                      src="https://media-exp1.licdn.com/dms/image/C4D03AQESizt9A4lxPQ/profile-displayphoto-shrink_400_400/0/1631842050436?e=1646870400&v=beta&t=PePu9sKgjWob-PihrTPeCrNNRav6oNvMLw5DoMSQeyI"
                       alt="Avatar"
                       class="img-fluid"
                       style="width: 80px; border-radius: .5rem;"
                     />
-                    <h5>RD_Originall</h5>
+                    <h5>Pourya Mansouri</h5>
                     <p>Cashier</p>
                     <i class="far fa-edit mb-5"></i>
                   </div>
@@ -95,12 +95,12 @@
                       <hr class="mt-0 mb-4">
                       <div class="row pt-1">
                         <div class="col-6 mb-3">
-                          <h6>Email</h6>
-                          <p class="text-muted">MaktabCashier@gmail.com</p>
+                          <h6>Web</h6>
+                          <p class="text-muted">pouryamansouri.com</p>
                         </div>
                         <div class="col-6 mb-3">
                           <h6>Phone</h6>
-                          <p class="text-muted">021-9109127</p>
+                          <p class="text-muted">021-91090933</p>
                         </div>
                       </div>
                       <h6>Status</h6>
@@ -108,15 +108,15 @@
                       <div class="row pt-1">
                         <div class="col-6 mb-3">
                           <h6>working</h6>
-                          <p class="text-muted">6h untill now!</p>
+                          <p class="text-muted">Full time!</p>
                         </div>
                         <div class="col-6 mb-3">
-                          <h6>Reciept number</h6>
-                          <p class="text-muted">32</p>
+                          <h6>Level</h6>
+                          <p class="text-muted">Senior</p>
                         </div>
                       </div>
                       <div class="d-flex justify-content-start">
-                        <button type="button" class="btn btn-danger">Logout</button>
+                        <a href="{{ url_for('index') }}" class="btn btn-danger">Logout</a>
                       </div>
                     </div>
                   </div>
@@ -270,7 +270,7 @@
       </section>
       <!-- Section: Links  -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        <p>Provided by: RD_Origiall</p>
+        <p>Provided by: Maktab-Group-6</p>
         <a class="text-white" href="home.html">Back to home</a>
       </div>
     </footer>

@@ -38,7 +38,7 @@ class Manager:
 
 
     def delete_from_db(self): # deleting a manager
-        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x", host='john.db.elephantsql.com', port='5432')
+        conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute("DELETE FROM manager WHERE manager.id = %s;", (self.manager_id))

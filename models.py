@@ -37,6 +37,15 @@ class Manager:
                                 host='john.db.elephantsql.com', port='5432')
 
 
+    def delete_from_db(self): # deleting a manager
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x", host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("DELETE FROM manager WHERE manager.id = %s;", (self.manager_id))
+        conn.close()
+        
+        
+
 class MenuItem:
     def __init__(self, name, price, discount, category_id, manager_id) -> None:
         self.name = name

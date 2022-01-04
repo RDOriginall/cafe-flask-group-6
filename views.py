@@ -50,3 +50,6 @@ def add_manager():
         return 'OkaY!'
     else:
         return 'Not Valid request!', 403
+
+def dashboard():
+    return render_template('dashboard.html')

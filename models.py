@@ -1,4 +1,6 @@
 import psycopg2
+from datetime import datetime
+
 
 
 class Manager:
@@ -165,3 +167,124 @@ class Table():
             with conn.cursor() as curs:
                 curs.execute("DELETE FROM manager WHERE table.id = %s;", (self.table_id))
         conn.close()
+
+
+
+class Category:
+    def __init__(self, name):
+        self.name = name
+
+    def add_to_db(self):  # adding to db category
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("insert into category(name) values (%s); ", (self.name,))
+                curs.execute("select * from category;")
+                self.category_id = curs.fetchall()[-1][0]
+        conn.close()
+
+    def delete_from_db(self):  # delete from db
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("delete from category where category.id= %s; ", (self.category_id,))
+        conn.close()
+
+    @staticmethod
+    def delete_from_db_by_id(id: int):  # delete from db by id
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("delete from category where category.id= %s; ", (id,))
+        conn.close()
+
+    @staticmethod
+    def edit_category(id, name):  # edit
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("UPDATE category SET name = %s WHERE category.id = %s;", (name, id,))
+        conn.close()
+
+    @staticmethod
+    def show_category(conn):  # show all category
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("select * from category;")
+                list_category = curs.fetchall()
+        return list_category
+
+
+class Reciept:
+    def __init__(self, table_id, manger_id):
+        self.table_id = table_id
+        self.manger_id = manger_id
+
+    def add_to_db(self):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(
+                    "insert into reciept(table_id,price,final_price,status,manager_id,reciept_time) values (%s,%s,%s,%s,%s,%s); ",
+                    (self.table_id, 0, 0, False, self.manger_id, datetime.now(),))
+                curs.execute("select * from reciept;")
+                self.reciept_id = curs.fetchall()[-1][0]
+        conn.close()
+        return self.reciept_id
+
+    @staticmethod
+    def reciept_all(table_id,off=1):
+
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("select id from reciept where table_id=%s and status=FALSE; ",(table_id,))
+                list_id = curs.fetchall()
+        price=Reciept.order_check(list_id[0][0])
+        final_price=price*off
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("UPDATE reciept SET price = %s , final_price=%s WHERE table_id = %s  and status=FALSE;", (price,final_price,table_id))
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("select * from reciept where table_id=%s and status=FALSE; ", (table_id,))
+                reciept = curs.fetchall()
+        conn.close()
+        return reciept
+
+
+    @staticmethod
+    def pay(table_id):  # pay status true
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("UPDATE reciept SET status = TRUE WHERE table_id = %s  and status=FALSE; ", (table_id,))
+        conn.close()
+
+
+    @staticmethod
+    def order_check(reciept_id):
+        price = 0
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(
+                    "select price p,(select number from order_list o where o.menu_item_id = m.id ) as tedad from menu_item m where m.id IN (select menu_item_id from order_list where reciept_id=%s);",
+                    (reciept_id,))
+                list_id = curs.fetchall()
+        for x in list_id:
+            price += x[0] * x[1]
+        conn.close()
+        return price
+
+

@@ -45,6 +45,23 @@ class Manager:
         conn.close()
         
         
+    def edit_in_db(self, first_name, last_name, phone_number, email, password): # edit a manager's information
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("""
+                             UPDATE manager 
+                             SET first_name = %s,
+                                 last_name = %s,
+                                 phone_number = %s,
+                                 email = %s,
+                                 password = %s,
+                                 WHERE manager.id = %s;
+                             """, 
+                            (self.first_name, self.last_name, self.phone_number, self.email, self.__password, self.manager_id))
+        conn.close()
+        
+        
 
 class MenuItem:
     def __init__(self, name, price, discount, category_id, manager_id) -> None:

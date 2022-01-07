@@ -12,6 +12,9 @@ app.add_url_rule('/cashier/dashboard', 'dashboard', dashboard)
 
 app.add_url_rule('/edit_menu_item/<item_id>', 'edit_menu_item', edit_menu_item, methods=['GET', 'POST'])
 
+#test for pull push
+# and so on
+
 
 if __name__ == '__main__':
     app.run(debug=True)

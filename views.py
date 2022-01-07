@@ -58,3 +58,17 @@ def dashboard():
 
 def manager_login():
     pass
+
+def edit_menu_item(item_id):
+    if request.method == 'GET':
+        item = MenuItem.get_by_id(int(item_id))
+        data = {
+            'name':item.name,
+            'price':item.price,
+            'discount':item.discount
+        }
+        return render_template('add_menu_item.html', data=data)
+    elif request.method == 'POST':
+        pass
+    else:
+        return 'Wrong request!', 403

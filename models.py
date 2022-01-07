@@ -110,8 +110,9 @@ class MenuItem:
         conn = cls.start_database()
         with conn:
             with conn.cursor() as curs:
-                curs.execute("SELECT * FROM menu_item WHERE manager.id = %s;", (obj_id,))
-                obj = cls(*curs.fetchone())
+                curs.execute("SELECT * FROM menu_item WHERE menu_item.id = %s;", (obj_id,))
+                data = curs.fetchone()
+                obj = cls(data[1],data[2],data[3],data[4],data[5])
         conn.close()
         return obj
 

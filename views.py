@@ -54,3 +54,7 @@ def add_manager():
 
 def dashboard():
     return render_template('dashboard.html')
+
+
+def manager_login():
+    pass

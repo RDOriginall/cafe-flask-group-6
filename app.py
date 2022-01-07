@@ -15,3 +15,6 @@ app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+# Hello this is second test

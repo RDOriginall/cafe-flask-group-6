@@ -63,7 +63,7 @@ class Manager:
                             (self.first_name, self.last_name, self.phone_number, self.email, self.__password, self.manager_id))
         conn.close()
         
-    def phone_validate(phone):
+    def check_phone(phone):
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
@@ -72,9 +72,21 @@ class Manager:
         conn.close()
         
         if self.phone in all_phones:
-            return self.phone
+            return True
         else:
             return f"invalid phone number please register!!"
+      
+        
+    def check_password(password):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT password FROM manager")
+                all_passwords = curs.fetchall()
+        if password in all_passwords:
+            return True
+        else:
+            return f"Your username or password is incorrect!"
         
 
 class MenuItem:

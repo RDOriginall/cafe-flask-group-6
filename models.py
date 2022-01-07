@@ -63,6 +63,18 @@ class Manager:
                             (self.first_name, self.last_name, self.phone_number, self.email, self.__password, self.manager_id))
         conn.close()
         
+    def phone_validate(phone):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT phone_number FROM manager")
+                all_phones = curs.fetchall()
+        conn.close()
+        
+        if self.phone in all_phones:
+            return self.phone
+        else:
+            return f"invalid phone number please register!!"
         
 
 class MenuItem:

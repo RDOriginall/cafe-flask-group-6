@@ -150,7 +150,8 @@ class OrderList:
 
 class Table():
     def __init__(self):
-        self.table_id = table_id
+        # self.table_id = table_id
+        pass
         
     def add_to_db(self): # add a table
         conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x", host='john.db.elephantsql.com', port='5432')

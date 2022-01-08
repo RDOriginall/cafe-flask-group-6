@@ -75,7 +75,8 @@ class Manager:
         if self.phone in all_phones:
             return True
         else:
-            return f"invalid phone number please register!!"
+            print("invalid phone number please register!!")
+            return False
       
         
     def check_password(self, password):
@@ -87,7 +88,8 @@ class Manager:
         if self.password in all_passwords:
             return True
         else:
-            return f"Your username or password is incorrect!"
+            print("Your username or password is incorrect!")
+            return False
         
 
 class MenuItem:

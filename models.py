@@ -64,7 +64,7 @@ class Manager:
         conn.close()
         
         
-    def check_phone(phone):
+    def check_phone(self, phone):
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
@@ -78,13 +78,13 @@ class Manager:
             return f"invalid phone number please register!!"
       
         
-    def check_password(password):
+    def check_password(self, password):
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
                 curs.execute("SELECT password FROM manager")
                 all_passwords = curs.fetchall()
-        if password in all_passwords:
+        if self.password in all_passwords:
             return True
         else:
             return f"Your username or password is incorrect!"

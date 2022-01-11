@@ -63,12 +63,20 @@ def edit_menu_item(item_id):
     if request.method == 'GET':
         item = MenuItem.get_by_id(int(item_id))
         data = {
+            'id': item_id,
             'name':item.name,
             'price':item.price,
-            'discount':item.discount
+            'discount':item.discount,
+            'category': item.category_id
         }
         return render_template('add_menu_item.html', data=data)
     elif request.method == 'POST':
-        pass
+        item = MenuItem.get_by_id(int(request.form.get('id')))
+        item.name = str(request.form.get('name'))
+        item.price = int(request.form.get('price'))
+        item.discount = float(request.form.get('discount'))
+        item.category_id = int(request.form.get('category'))
+        item.update_database()
+        return 'Item updated!', 201
     else:
         return 'Wrong request!', 403

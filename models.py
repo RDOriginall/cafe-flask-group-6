@@ -115,7 +115,7 @@ class MenuItem:
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
-                    "UPDATE menu_item SET name = %s, price = %s, discount = %s, category_id = %s, manager_id = %s) WHERE menu_item.id = %s;"
+                    "UPDATE menu_item SET name = %s, price = %s, discount = %s, category_id = %s, manager_id = %s WHERE menu_item.id = %s;"
                     , (self.name, self.price, self.discount, self.category_id, self.manager_id, self.id))
         conn.close()
         # logging
@@ -137,6 +137,7 @@ class MenuItem:
                 curs.execute("SELECT * FROM menu_item WHERE menu_item.id = %s;", (obj_id,))
                 data = curs.fetchone()
                 obj = cls(data[1],data[2],data[3],data[4],data[5])
+                obj.id = obj_id
         conn.close()
         return obj
 

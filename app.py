@@ -9,16 +9,11 @@ app.add_url_rule('/menu/', 'menu', menu_items)
 app.add_url_rule('/add_menu_item/', 'add_menu_item', add_menu_items, methods=['GET', 'POST'])
 app.add_url_rule('/cashier/dashboard', 'dashboard', dashboard)
 # app.add_url_rule('/cashier/login', 'add_manager', manager_login, methods=['POST'])
-
 app.add_url_rule('/edit_menu_item/', 'edit_menu_item', edit_menu_item, defaults={'item_id':1}, methods=['GET', 'POST'])
 app.add_url_rule('/edit_menu_item/<item_id>', 'edit_menu_item', edit_menu_item, methods=['GET', 'POST'])
-
 app.add_url_rule('/delete_menu_item/', 'delete_menu_item', delete_menu_item, methods=['GET', 'POST'])
-
 app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET', 'POST'])
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# Hello this is second test
+    

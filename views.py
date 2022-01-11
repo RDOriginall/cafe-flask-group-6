@@ -69,7 +69,7 @@ def edit_menu_item(item_id):
             'discount':item.discount,
             'category': item.category_id
         }
-        return render_template('add_menu_item.html', data=data)
+        return render_template('edit_menu_item.html', data=data)
     elif request.method == 'POST':
         item = MenuItem.get_by_id(int(request.form.get('id')))
         item.name = str(request.form.get('name'))
@@ -78,5 +78,16 @@ def edit_menu_item(item_id):
         item.category_id = int(request.form.get('category'))
         item.update_database()
         return 'Item updated!', 201
+    else:
+        return 'Wrong request!', 403
+    
+def delete_menu_item():
+    if request.method == 'GET':
+        return render_template('delete_menu_item.html')
+    elif request.method == 'POST':
+        item_id = int(request.form.get('id'))
+        item = MenuItem.get_by_id(item_id)
+        item.delete_from_database()
+        return 'Item deleted!'
     else:
         return 'Wrong request!', 403

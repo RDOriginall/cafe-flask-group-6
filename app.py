@@ -12,6 +12,9 @@ app.add_url_rule('/cashier/dashboard', 'dashboard', dashboard)
 
 app.add_url_rule('/edit_menu_item/', 'edit_menu_item', edit_menu_item, defaults={'item_id':1}, methods=['GET', 'POST'])
 app.add_url_rule('/edit_menu_item/<item_id>', 'edit_menu_item', edit_menu_item, methods=['GET', 'POST'])
+
+app.add_url_rule('/delete_menu_item/', 'delete_menu_item', delete_menu_item, methods=['GET', 'POST'])
+
 app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET', 'POST'])
 
 if __name__ == '__main__':

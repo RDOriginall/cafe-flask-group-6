@@ -34,3 +34,18 @@ def recipt_not_pay():
         list.append({'id_recipt': x[0], 'table_id': x[1]})
     return list
 
+def recipt_to_pay(recipt_id):
+    list_order=Reciept.reciept_all_id(recipt_id)
+    list = []
+    for x in list_order:
+        list.append({'table_id': x[1],'price': x[2],'final_price': x[3]})
+    return list
+
+def order_list(recipt_id):
+    list_order=Reciept.order_send(recipt_id)
+    list = []
+    for x in list_order:
+        list.append({'name': x[0],'price': x[1],'number': x[2],'total':x[1]*x[2]})
+    return list
+
+

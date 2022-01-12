@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reciept</title>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>reciept table: {{  total[0].table_id   }}</h2>
+
+<table>
+  <tr>
+    <th>name of order</th>
+    <th>price</th>
+    <th>count</th>
+      <th>total</th>
+  </tr>
+    {% for item in order %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.price }}</td>
+      <td>{{ item.number }}</td>
+      <td>{{ item.total }}</td>
+  </tr>
+    {% endfor %}
+    <tr>
+    <td><b> total :</b></td>
+    <td>{{ total[0].price }}</td>
+      <td><b> final :</b></td>
+      <td>{{ total[0].final_price }}</td>
+  </tr>
+
+</table>
+
+
+</body>
+</html>

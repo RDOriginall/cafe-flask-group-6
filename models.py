@@ -286,6 +286,23 @@ class Reciept:
         conn.close()
         return reciept
 
+    @staticmethod
+    def reciept_all_id(reciept_id, off=1):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        price = Reciept.order_check(reciept_id)
+        final_price = price * off
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("UPDATE reciept SET price = %s , final_price=%s WHERE id = %s ;",
+                             (price, final_price, reciept_id))
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("select * from reciept where id=%s ; ", (reciept_id,))
+                reciept = curs.fetchall()
+        conn.close()
+        return reciept
+
 
     @staticmethod
     def pay(table_id):  # pay status true
@@ -313,4 +330,18 @@ class Reciept:
         conn.close()
         return price
 
-Reciept.reciept_all(2)
+    @staticmethod
+    def order_send(reciept_id):
+        price = 0
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(
+                    "select name n,price p,(select number from order_list o where o.menu_item_id = m.id and reciept_id=%s ) as tedad from menu_item m where m.id IN (select menu_item_id from order_list where reciept_id=%s);",
+                    (reciept_id,reciept_id,))
+                list_id = curs.fetchall()
+        conn.close()
+        return list_id
+
+print(Reciept.order_send(3))

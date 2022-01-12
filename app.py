@@ -7,7 +7,7 @@ app.add_url_rule('/', 'index', index, methods=['GET', 'POST'])
 # app.add_url_rule('/manager/', 'add_manager', add_manager, methods=['GET', 'POST'])
 app.add_url_rule('/menu/', 'menu', menu_items)
 app.add_url_rule('/add_menu_item/', 'add_menu_item', add_menu_items, methods=['GET', 'POST'])
-app.add_url_rule('/cashier/dashboard', 'dashboard', dashboard)
+app.add_url_rule('/cashier/dashboard','dashboard', dashboard , methods=['GET', 'POST'])
 # app.add_url_rule('/cashier/login', 'add_manager', manager_login, methods=['POST'])
 
 app.add_url_rule('/edit_menu_item/<item_id>', 'edit_menu_item', edit_menu_item, methods=['GET', 'POST'])

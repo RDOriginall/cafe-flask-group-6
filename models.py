@@ -305,12 +305,12 @@ class Reciept:
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
-                    "select price p,(select number from order_list o where o.menu_item_id = m.id ) as tedad from menu_item m where m.id IN (select menu_item_id from order_list where reciept_id=%s);",
-                    (reciept_id,))
+                    "select price p,(select number from order_list o where o.menu_item_id = m.id and reciept_id=%s ) as tedad from menu_item m where m.id IN (select menu_item_id from order_list where reciept_id=%s);",
+                    (reciept_id,reciept_id,))
                 list_id = curs.fetchall()
         for x in list_id:
             price += x[0] * x[1]
         conn.close()
         return price
 
-
+Reciept.reciept_all(2)

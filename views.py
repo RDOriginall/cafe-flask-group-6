@@ -53,7 +53,13 @@ def add_manager():
 
 
 def dashboard():
-    return render_template('dashboard.html')
+    if request.method == 'GET':
+        list_not_pay = recipt_not_pay()
+        return render_template('dashboard.html', list=list_not_pay)
+    elif request.method == 'POST':
+        return "Message received!\nThank you."
+
+
 
 
 def manager_login():
@@ -72,3 +78,4 @@ def edit_menu_item(item_id):
         pass
     else:
         return 'Wrong request!', 403
+

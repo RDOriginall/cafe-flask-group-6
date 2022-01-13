@@ -53,7 +53,22 @@ def add_manager():
 
 
 def dashboard():
-    return render_template('dashboard.html')
+    if request.method == 'GET':
+        list_not_pay = recipt_not_pay()
+        return render_template('dashboard.html', list_not_pay=list_not_pay)
+    elif request.method == 'POST':
+        return "Message received!\nThank you."
+
+def print_reciept(reciept_id):
+    if request.method == 'GET':
+        list_order = order_list(reciept_id)
+        total_list=recipt_to_pay(reciept_id)
+        return render_template('reciept.html', order= list_order,total=total_list)
+    elif request.method == 'POST':
+        return "Message received!\nThank you."
+
+
+
 
 
 def manager_login():
@@ -91,3 +106,4 @@ def delete_menu_item():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
+

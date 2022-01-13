@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from slidesigma.com/themes/html/costic/pages/ui-advanced/modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 10:34:58 GMT -->
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>داشبرد کاستیک</title>
+  <!-- Iconic Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../vendors/iconic-fonts/flat-icons/flaticon.css">
+    <link href="../../vendors/iconic-fonts/font-awesome/css/all.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery UI -->
+  <link href="../../assets/css/jquery-ui.min.css" rel="stylesheet">
+  <!-- Costic styles -->
+  <link href="../../assets/css/style.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon.ico">
+
+</head>
+
+<body class="ms-body ms-aside-left-open ms-primary-theme ms-has-quickbar">
+
+ 
+
+  <!-- Preloader -->
+  <div id="preloader-wrap">
+    <div class="spinner spinner-8">
+      <div class="ms-circle1 ms-child"></div>
+      <div class="ms-circle2 ms-child"></div>
+      <div class="ms-circle3 ms-child"></div>
+      <div class="ms-circle4 ms-child"></div>
+      <div class="ms-circle5 ms-child"></div>
+      <div class="ms-circle6 ms-child"></div>
+      <div class="ms-circle7 ms-child"></div>
+      <div class="ms-circle8 ms-child"></div>
+      <div class="ms-circle9 ms-child"></div>
+      <div class="ms-circle10 ms-child"></div>
+      <div class="ms-circle11 ms-child"></div>
+      <div class="ms-circle12 ms-child"></div>
+    </div>
+  </div>
+
+  <!-- Overlays -->
+  <div class="ms-aside-overlay ms-overlay-left ms-toggler" data-target="#ms-side-nav" data-toggle="slideLeft"></div>
+  <div class="ms-aside-overlay ms-overlay-right ms-toggler" data-target="#ms-recent-activity" data-toggle="slideRight"></div>
+
+  <!-- Sidebar Navigation Left -->
+  <aside id="ms-side-nav" class="side-nav fixed ms-aside-scrollable ms-aside-left">
+
+    <!-- Logo -->
+    <div class="logo-sn ms-d-block-lg">
+      <a class="pl-0 ml-0 text-center" href="../../index.html"> <img src="../../assets/img/costic/costic-logo-216x62.png" alt="logo"> </a>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="accordion ms-main-aside fs-14" id="side-nav-accordion">
+      <!-- Dashboard -->
+      <li class="menu-item">
+          <a href="#" class="has-chevron" data-toggle="collapse" data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
+             <span><i class="material-icons fs-16">dashboard</i>داشبرد</span>
+           </a>
+          <ul id="dashboard" class="collapse" aria-labelledby="dashboard" data-parent="#side-nav-accordion">
+              <li> <a href="../../index.html">کاستیک</a> </li>
+
+          </ul>
+      </li>
+      <!-- /Dashboard -->
+      <!-- product -->
+
+      <li class="menu-item">
+          <a href="#" class="has-chevron" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="product">
+               <span><i class="fa fa-archive fs-16"></i>منوها</span>
+           </a>
+          <ul id="product" class="collapse" aria-labelledby="product" data-parent="#side-nav-accordion">
+              <li> <a href="../product/productcata.html">کاتالوگ منو</a> </li>
+                    <li> <a href="../product/productlist.html">لیست منو</a> </li>
+                          <li> <a href="../product/productgrid.html">منو کارتی</a> </li>
+                                <li> <a href="../product/addproduct.html">افزودن محصول</a> </li>
+                                      <li> <a href="../product/productdetail.html">جزییات محصول</a> </li>
+
+          </ul>
+      </li>
+      <!-- product end -->
+
+      <!-- orders -->
+      <li class="menu-item">
+                <a href="../orders.html">
+                 <span><i class="fas fa-clipboard-list fs-16"></i>سفارشات</span>
+                </a>
+              </li>
+      <!-- orders end -->
+    <!-- restaurants -->
+  <li class="menu-item">
+                      <a href="../restaurants.html">
+                        <span><i class="fa fa-tasks fs-16"></i>لیست رستوران‌ها</span>
+                      </a>
+                    </li>
+            <!-- restaurants end -->
+
+            <!-- Invoice -->
+
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#invoice" aria-expanded="false" aria-controls="invoice">
+                     <span><i class="fas fa-file-invoice fs-16"></i>فاکتور</span>
+                 </a>
+                <ul id="invoice" class="collapse" aria-labelledby="invoice" data-parent="#side-nav-accordion">
+                    <li> <a href="../invoice/invoicedetail.html">جزییات فاکتور</a> </li>
+                          <li> <a href="../invoice/invoicelist.html">لیست فاکتور</a> </li>
+
+                </ul>
+            </li>
+            <!-- Invoice end -->
+
+            <!-- customers-->
+
+            <li class="menu-item">
+                <a href="#" class="has-chevron" data-toggle="collapse" data-target="#customer" aria-expanded="false" aria-controls="customer">
+                     <span><i class="fas fa-user-friends fs-16"></i>مشتریان</span>
+                 </a>
+                <ul id="customer" class="collapse" aria-labelledby="customer" data-parent="#side-nav-accordion">
+                    <li> <a href="../customer/customersreview.html">نظرات مشتریان</a> </li>
+                          <li> <a href="../customer/customerlist.html">لیست مشتریان</a> </li>
+                          <li> <a href="../customer/social.html">فعالیت مجازی</a> </li>
+
+
+                </ul>
+            </li>
+            <!-- Customers  end -->
+
+            <!-- sales -->
+            <li class="menu-item">
+              <a href="../sales.html">
+                    <span><i class="fa fa-briefcase fs-16"></i>فروش‌ها</span>
+              </a>
+            </li>
+
+            <!-- sales end  -->
+
+        <li class="menu-item">
+          <a href="../widgets.html">
+            <span><i class="material-icons fs-16">widgets</i>ویجت‌ها</span>
+          </a>
+        </li>
+        <!-- Basic UI Elements -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
+              <span><i class="material-icons fs-16">filter_list</i>عناصر رابط کاربری</span>
+            </a>
+            <ul id="basic-elements" class="collapse" aria-labelledby="basic-elements" data-parent="#side-nav-accordion">
+              <li> <a href="../ui-basic/accordions.html">آکاردیون</a> </li>
+              <li> <a href="../ui-basic/alerts.html">هشدارها</a> </li>
+              <li> <a href="../ui-basic/buttons.html">دکمه‌ها</a> </li>
+              <li> <a href="../ui-basic/breadcrumbs.html">بردکرامب</a> </li>
+              <li> <a href="../ui-basic/badges.html">نشان‌ها</a> </li>
+              <li> <a href="../ui-basic/cards.html">کارت‌ها</a> </li>
+              <li> <a href="../ui-basic/progress-bars.html">نوار پیشرفت</a> </li>
+              <li> <a href="../ui-basic/preloaders.html">بارگذاری پیش از صفحه</a> </li>
+              <li> <a href="../ui-basic/pagination.html">صفحه‌بندی</a> </li>
+              <li> <a href="../ui-basic/tabs.html">تب‌ها</a> </li>
+
+              <li> <a href="../ui-basic/typography.html">تایپوگرافی</a> </li>
+            </ul>
+        </li>
+        <!-- /Basic UI Elements -->
+        <!-- Advanced UI Elements -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#advanced-elements" aria-expanded="false" aria-controls="advanced-elements">
+              <span><i class="material-icons fs-16">code</i>عناصر پیشرفته رابط کاربری</span>
+            </a>
+            <ul id="advanced-elements" class="collapse" aria-labelledby="advanced-elements" data-parent="#side-nav-accordion">
+              <li> <a href="draggables.html">جابه‌جایی المنت</a> </li>
+              <li> <a href="sliders.html">اسلایدر</a> </li>
+              <li> <a href="modals.html">مودال ها</a> </li>
+              <li> <a href="rating.html">رتبه دهی</a> </li>
+              <li> <a href="tour.html">تور سایت</a> </li>
+              <li> <a href="cropper.html">برش دهنده</a> </li>
+              <li> <a href="range-slider.html">اسلایدر بازه ای</a> </li>
+            </ul>
+        </li>
+        <!-- /Advanced UI Elements -->
+        <li class="menu-item">
+            <a href="../animation.html">
+              <span><i class="material-icons fs-16">format_paint</i>انیمیشن ها</span>
+            </a>
+        </li>
+        <!-- Form Elements -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <span><i class="material-icons fs-16">input</i>عناصر فرم</span>
+            </a>
+            <ul id="form-elements" class="collapse" aria-labelledby="form-elements" data-parent="#side-nav-accordion">
+              <li> <a href="../form/form-elements.html">عناصر فرم</a> </li>
+              <li> <a href="../form/form-layout.html">صفحات فرم</a> </li>
+              <li> <a href="../form/form-validation.html">اعتبارسنجی فرم</a> </li>
+              <li> <a href="../form/form-wizard.html">فرم مرحله‌ای</a> </li>
+            </ul>
+        </li>
+        <!-- /Form Elements -->
+        <!-- Charts -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#charts" aria-expanded="false" aria-controls="charts">
+              <span><i class="material-icons fs-16">equalizer</i>چا‌رت‌ها</span>
+            </a>
+            <ul id="charts" class="collapse" aria-labelledby="charts" data-parent="#side-nav-accordion">
+              <li> <a href="../charts/chartjs.html">چارت جی اس</a> </li>
+              <li> <a href="../charts/morris-charts.html">چارت موریس</a> </li>
+            </ul>
+        </li>
+        <!-- /Charts -->
+        <!-- Tables -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#tables" aria-expanded="false" aria-controls="tables">
+              <span><i class="material-icons fs-16">tune</i>جدول‌ها</span>
+            </a>
+            <ul id="tables" class="collapse" aria-labelledby="tables" data-parent="#side-nav-accordion">
+              <li> <a href="../tables/basic-tables.html">جدول‌های پایه </a> </li>
+              <li> <a href="../tables/data-tables.html">جدول‌های داده</a> </li>
+            </ul>
+        </li>
+        <!-- /Tables -->
+        <!-- Popups -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#popups" aria-expanded="false" aria-controls="popups">
+              <span><i class="material-icons fs-16">message</i>پاپ‌آپ‌ها</span>
+            </a>
+            <ul id="popups" class="collapse" aria-labelledby="popups" data-parent="#side-nav-accordion">
+              <li> <a href="../popups/sweet-alerts.html">هشدار سوییت</a> </li>
+              <li> <a href="../popups/toast.html">هشدار توست</a> </li>
+            </ul>
+        </li>
+        <!-- /Popups -->
+        <!-- Icons -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#icons" aria-expanded="false" aria-controls="icons">
+              <span><i class="material-icons fs-16">border_color</i>آیکن‌ها</span>
+            </a>
+            <ul id="icons" class="collapse" aria-labelledby="icons" data-parent="#side-nav-accordion">
+              <li> <a href="../icons/fontawesome.html">فونت آوسام</a> </li>
+              <li> <a href="../icons/flaticons.html">فلت آیکون</a> </li>
+              <li> <a href="../icons/materialize.html">متریالیز آیکن</a> </li>
+            </ul>
+        </li>
+        <!-- /Icons -->
+        <!-- Maps -->
+        <li class="menu-item">
+            <a href="#" class="has-chevron" data-toggle="collapse" data-target="#maps" aria-expanded="false" aria-controls="maps">
+              <span><i class="material-icons fs-16">map</i>نقشه ها</span>
+            </a>
+            <ul id="maps" class="collapse" aria-labelledby="maps" data-parent="#side-nav-accordion">
+    
+              <li> <a href="../maps/vector-maps.html">نقشه وکتور</a> </li>
+            </ul>
+        </li>
+        <!-- /Maps -->
+        <!--bonus  Pages -->
+        <li class="menu-item">
+          <a href="#" class="has-chevron" data-toggle="collapse" data-target="#bonuspages" aria-expanded="false" aria-controls="bonuspages">
+            <span><i class="material-icons fs-16">insert_drive_file</i> صفحات افزوده</span>
+          </a>
+          <ul id="bonuspages" class="collapse" aria-labelledby="bonuspages" data-parent="#side-nav-accordion">
+          
+            <li> <a href="../dashboard/web-analytics.html"> وب آنالیز </a> </li>
+          
+            <li> <a href="../dashboard/project-management.html">مدیریت فروش</a> </li>
+            <li> <a href="../dashboard/client-management.html">مدیریت مشتریان</a> </li>
+
+          </ul>
+        </li>
+        <!-- / bonus Pages -->
+        <!-- Pages -->
+        <li class="menu-item">
+          <a href="#" class="has-chevron" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages">
+            <span><i class="material-icons fs-16">insert_drive_file</i>صفحات</span>
+          </a>
+          <ul id="pages" class="collapse" aria-labelledby="pages" data-parent="#side-nav-accordion">
+            <li class="menu-item">
+              <a href="#" class="has-chevron" data-toggle="collapse" data-target="#authentication" aria-expanded="false" aria-controls="authentication">احراز هویت</a>
+              <ul id="authentication" class="collapse" aria-labelledby="authentication" data-parent="#pages">
+                <li> <a href="../prebuilt-pages/default-login.html">ورود پیشفرض</a> </li>
+                <li> <a href="../prebuilt-pages/modal-login.html">ورود مودال به زودی</a> </li>
+                <li> <a href="../prebuilt-pages/default-register.html">ثبت نام پیشفرض</a> </li>
+                <li> <a href="../prebuilt-pages/modal-register.html">ثبت نام مودال به زودی</a> </li>
+                <li> <a href="../prebuilt-pages/lock-screen.html">قفل صفحه</a> </li>
+              </ul>
+            </li>
+            <li> <a href="../prebuilt-pages/coming-soon.html">به زودی</a> </li>
+            <li> <a href="../prebuilt-pages/error.html">صفحه خطا</a> </li>
+            <li class="menu-item"> <a href="../prebuilt-pages/faq.html">پرسش و پاسخ</a> </li>
+            <li class="menu-item"> <a href="../prebuilt-pages/portfolio.html"> نمونه‌کارها </a> </li>
+            <li class="menu-item"> <a href="../prebuilt-pages/user-profile.html"> پروفایل کاربر </a> </li>
+            <li class="menu-item"> <a href="../prebuilt-pages/invoice.html"> صورتحساب </a> </li>
+
+          </ul>
+        </li>
+        <!-- /Pages -->
+        <!-- Apps -->
+        <li class="menu-item">
+          <a href="#" class="has-chevron" data-toggle="collapse" data-target="#apps" aria-expanded="false" aria-controls="apps">
+            <span><i class="material-icons fs-16">phone_iphone</i>اپ‌ها</span>
+          </a>
+          <ul id="apps" class="collapse" aria-labelledby="apps" data-parent="#side-nav-accordion">
+            <li> <a href="../apps/chat.html">چت</a> </li>
+            <li> <a href="../apps/email.html">ایمیل</a> </li>
+            <li> <a href="../apps/to-do-list.html">لیست کار</a> </li>
+          </ul>
+        </li>
+        <!-- /Apps -->
+    </ul>
+
+
+  </aside>
+
+  <!-- Sidebar Right -->
+  <aside id="ms-recent-activity" class="side-nav fixed ms-aside-right ms-scrollable">
+
+    <div class="ms-aside-header">
+      <ul class="nav nav-tabs tabs-bordered d-flex nav-justified mb-3" role="tablist">
+        <li role="presentation" class="fs-12"><a href="#activityLog" aria-controls="activityLog" class="active" role="tab" data-toggle="tab"> لاگ فعالیت ها</a></li>
+       
+        <li><button type="button" class="close ms-toggler text-center" data-target="#ms-recent-activity" data-toggle="slideRight"><span aria-hidden="true">&times;</span></button></li>
+      </ul>
+    </div>
+
+    <div class="ms-aside-body">
+
+       <div class="tab-content">
+
+         <div role="tabpanel" class="tab-pane active fade show" id="activityLog">
+           <ul class="ms-activity-log">
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-light">
+                 <i class="flaticon-gear"></i>
+               </div>
+               <h6>به روز رسانی 1.0.0 </h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-success">
+                 <i class="flaticon-tick-inside-circle"></i>
+               </div>
+               <h6>به‌روزرسانی پروفایل</h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-warning">
+                 <i class="flaticon-alert-1"></i>
+               </div>
+               <h6>پرداخت شما</h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-danger">
+                 <i class="flaticon-alert"></i>
+               </div>
+               <h6>خطا دیتابیس</h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-info">
+                 <i class="flaticon-information"></i>
+               </div>
+               <h6>دیدن پربازدیدترین‌ها</h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+             <li>
+               <div class="ms-btn-icon btn-pill icon btn-secondary">
+                 <i class="flaticon-diamond"></i>
+               </div>
+               <h6>داشبرد شما آماده است</h6>
+               <span> <i class="material-icons">event</i>19 بهمن 1398</span>
+               <p class="fs-14">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+             </li>
+           </ul>
+           <a href="#" class="btn btn-primary d-block"> دیدن همه</a>
+         </div>
+
+   
+       </div>
+
+    </div>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="body-content">
+
+    <!-- Navigation Bar -->
+ <nav class="navbar ms-navbar">
+
+      <div class="ms-aside-toggler ms-toggler pl-0" data-target="#ms-side-nav" data-toggle="slideLeft">
+        <span class="ms-toggler-bar bg-primary"></span>
+        <span class="ms-toggler-bar bg-primary"></span>
+        <span class="ms-toggler-bar bg-primary"></span>
+      </div>
+
+      <div class="logo-sn logo-sm ms-d-block-sm">
+        <a class="pl-0 ml-0 text-center navbar-brand mr-0" href="../../index.html"><img src="../../assets/img/costic/costic-logo-84x41.png" alt="logo"> </a>
+      </div>
+
+      <ul class="ms-nav-list ms-inline mb-0" id="ms-nav-options">
+        <li class="ms-nav-item ms-search-form pb-0 py-0">
+          <form class="ms-form" method="post">
+            <div class="ms-form-group my-0 mb-0 has-icon fs-14">
+              <input type="search" class="ms-form-input" name="search" placeholder="جستجو" value="">
+              <i class="flaticon-search text-disabled"></i>
+            </div>
+          </form>
+        </li>
+        <li class="ms-nav-item dropdown">
+          <a href="#" class="text-disabled ms-has-notification" id="mailDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-mail"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="mailDropdown">
+            <li class="dropdown-menu-header">
+              <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">پیام</span></h6><span class="badge badge-pill badge-success">3 جدید</span>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="ms-scrollable ms-dropdown-list">
+              <a class="media p-2" href="#">
+                <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
+                  <img src="../../assets/img/costic/customer-1.jpg" class="ms-img-round" alt="people">
+                </div>
+                <div class="media-body">
+                  <span>سلام منتظر پروژه جدید هستم.</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 30 ثانیه قبل</p>
+                </div>
+              </a>
+              <a class="media p-2" href="#">
+                <div class="ms-chat-status ms-status-online ms-chat-img mr-2 align-self-center">
+                  <img src="../../assets/img/costic/customer-2.jpg" class="ms-img-round" alt="people">
+                </div>
+                <div class="media-body">
+                  <span>منتظر نظر تو در رابطه با پروژه جدید هستم</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 28 دقیقه قبل</p>
+                </div>
+              </a>
+              <a class="media p-2" href="#">
+                <div class="ms-chat-status ms-status-offline ms-chat-img mr-2 align-self-center">
+                  <img src="../../assets/img/costic/customer-3.jpg" class="ms-img-round" alt="people">
+                </div>
+                <div class="media-body">
+                  <span>چند نفر رو میتونم به داشبرد دعوت کنم؟</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 6ساعت قبل</p>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-menu-footer text-center">
+              <a href="../apps/email.html">رفتن به صفحه اصلی</a>
+            </li>
+          </ul>
+        </li>
+        <li class="ms-nav-item dropdown">
+          <a href="#" class="text-disabled ms-has-notification" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-bell"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationDropdown">
+            <li class="dropdown-menu-header">
+              <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">اطلاعیه‌ها</span></h6><span class="badge badge-pill badge-info">4 جدید</span>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="ms-scrollable ms-dropdown-list">
+              <a class="media p-2" href="#">
+                <div class="media-body">
+                  <span>12 راه جدید برای داشتن داشبرد بهتر</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 30 ثانیه قبل</p>
+                </div>
+              </a>
+              <a class="media p-2" href="#">
+                <div class="media-body">
+                  <span>ورود موفقیت آمیز</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 45 دقیقه قبل</p>
+                </div>
+              </a>
+              <a class="media p-2" href="#">
+                <div class="media-body">
+                  <span>آی پی شما در سیستم ذخیره شد</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 2ساعت قبل</p>
+                </div>
+              </a>
+              <a class="media p-2" href="#">
+                <div class="media-body">
+                  <span>فرم مورد نظر شما ارسال شد</span>
+                  <p class="fs-10 my-1 text-disabled"><i class="material-icons">access_time</i> 1 day ago</p>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-menu-footer text-center">
+              <a href="#">دیدن تمامی اطلاعیه‌ها</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="ms-nav-item ms-nav-user dropdown">
+          <a href="#" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="ms-user-img ms-img-round float-right" src="../../assets/img/costic/customer-6.jpg" alt="people"> </a>
+          <ul class="dropdown-menu dropdown-menu-right user-dropdown" aria-labelledby="userDropdown">
+            <li class="dropdown-menu-header">
+              <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">خوش آمدی صنم</span></h6>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="ms-dropdown-list">
+              <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"> <span><i class="flaticon-user mr-2"></i> پروفایل</span> </a>
+              <a class="media fs-14 p-2" href="../apps/email.html"> <span><i class="flaticon-mail mr-2"></i> صفحه اصلی</span> <span class="badge badge-pill badge-info">3</span> </a>
+              <a class="media fs-14 p-2" href="../prebuilt-pages/user-profile.html"> <span><i class="flaticon-gear mr-2"></i> تنظیمات اکانت</span> </a>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-menu-footer">
+              <a class="media fs-14 p-2" href="../prebuilt-pages/lock-screen.html"> <span><i class="flaticon-security mr-2"></i> قفل صفحه</span> </a>
+            </li>
+            <li class="dropdown-menu-footer">
+              <a class="media fs-14 p-2" href="../prebuilt-pages/default-login.html"> <span><i class="flaticon-shut-down mr-2"></i> خروج</span> </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="ms-toggler ms-d-block-sm pr-0 ms-nav-toggler" data-toggle="slideDown" data-target="#ms-nav-options">
+        <span class="ms-toggler-bar bg-primary"></span>
+        <span class="ms-toggler-bar bg-primary"></span>
+        <span class="ms-toggler-bar bg-primary"></span>
+      </div>
+
+    </nav>
+
+    <!-- Body Content Wrapper -->
+    <div class="ms-content-wrapper">
+      <div class="row">
+
+        <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb pl-0">
+              <li class="breadcrumb-item"><a href="#"><i class="material-icons">home</i> خانه</a></li>
+              <li class="breadcrumb-item"><a href="#">عناصر پیشرفته رابط کاربری </a></li>
+              <li class="breadcrumb-item active" aria-current="page">مودال‌ها</li>
+            </ol>
+          </nav>
+
+          <div class="ms-panel">
+            <div class="ms-panel-header">
+              <h6>مودال نوع 1</h6>
+            </div>
+            <div class="ms-panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">هشدار مهم</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-1">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="modal-1">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <h3 class="modal-title has-icon ms-icon-round "><i class="flaticon-alert-1 bg-primary text-white"></i>!پیام مهم</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <label class="ms-checkbox-wrap">
+                            <input type="checkbox" value="">
+                            <i class="ms-checkbox-check"></i>
+                          </label>
+                          <span>دوباره نشان نده </span>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-primary shadow-none">قبول</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">رضایت کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-2">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="modal-2">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <h3 class="modal-title has-icon ms-icon-round "><i class="flaticon-placeholder bg-primary text-white"></i> اجازه ردیابی مکان?</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <a href="#" class="btn-link">بیشتر بدانید</a>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">اجازه نده</button>
+                        <button type="button" class="btn btn-primary shadow-none">اجازه دادن</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">انتخاب کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-3">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="modal-3">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <h3 class="modal-title has-icon ms-icon-round "><i class="flaticon-share bg-primary text-white"></i>مشترک خبرنامه شدن</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <label>گرفتن آخرین تغییرات</label>
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="news-letter" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                        </form>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">لغو</button>
+                        <button type="button" class="btn btn-primary shadow-none">ارسال</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">شرایط و قوانین</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-4">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="modal-4">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <h3 class="modal-title has-icon ms-icon-round "><i class="flaticon-alert bg-primary text-white"></i> شرایط و قوانین </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        </p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <label class="ms-checkbox-wrap">
+                            <input type="checkbox" value="">
+                            <i class="ms-checkbox-check"></i>
+                          </label>
+                          <span>موافقت با قوانین </span>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-primary shadow-none">ادامه </button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ms-panel">
+            <div class="ms-panel-header">
+              <h6>مودال نوع 2</h6>
+            </div>
+            <div class="ms-panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">هشدار مهم</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-5">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-5" tabindex="-1" role="dialog" aria-labelledby="modal-5">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header bg-primary">
+                        <h3 class="modal-title has-icon text-white"><i class="flaticon-alert-1"></i> هشدار مهم!</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <label class="ms-checkbox-wrap">
+                            <input type="checkbox" value="">
+                            <i class="ms-checkbox-check"></i>
+                          </label>
+                          <span>دوباره نشان نده </span>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-primary shadow-none" data-dismiss="modal">موافقت</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">رضایت کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-6">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-6" tabindex="-1" role="dialog" aria-labelledby="modal-6">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header bg-primary">
+                        <h3 class="modal-title has-icon text-white"><i class="flaticon-placeholder"></i> اجازه دادن ردیابی مکان?</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <a href="#" class="btn-link">بیشتر بدانید</a>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">اجازه نده</button>
+                        <button type="button" class="btn btn-primary shadow-none" data-dismiss="modal">اجازه دادن</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">فرم انتخاب کردن</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-7">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-7" tabindex="-1" role="dialog" aria-labelledby="modal-7">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header bg-primary">
+                        <h3 class="modal-title has-icon text-white"><i class="flaticon-share"></i> اشتراک </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <label>باخبر شدن از آخرین تغییرات</label>
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="news-letter" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                        </form>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">لغو</button>
+                        <button type="button" class="btn btn-primary shadow-none" data-dismiss="modal">ارسال</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">شرایط و قوانین</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-8">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-8" tabindex="-1" role="dialog" aria-labelledby="modal-8">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-header bg-primary">
+                        <h3 class="modal-title has-icon text-white"><i class="flaticon-alert"></i> شرایط و قوانین </h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <p>
+                          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                        </p>
+                      </div>
+
+                      <div class="modal-footer">
+                        <div class="modal-notice">
+                          <label class="ms-checkbox-wrap">
+                            <input type="checkbox" value="">
+                            <i class="ms-checkbox-check"></i>
+                          </label>
+                          <span>موافقت با قوانین </span>
+                        </div>
+                        <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+                        <button type="button" class="btn btn-primary shadow-none" data-dismiss="modal">ادامه</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ms-panel">
+            <div class="ms-panel-header">
+              <h6>مودال نوع 3</h6>
+            </div>
+            <div class="ms-panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">پیام تبریک </h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-9">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-9" tabindex="-1" role="dialog" aria-labelledby="modal-9">
+                  <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <i class="flaticon-tick-inside-circle d-block"></i>
+                        <h1>تبریک!</h1>
+                        <p>
+                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+                        </p>
+                        <button type="button" class="btn btn-primary shadow-none">شروع</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">انتخاب کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-10">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-10" tabindex="-1" role="dialog" aria-labelledby="modal-10">
+                  <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <i class="flaticon-email d-block"></i>
+                        <h1>اشتراک</h1>
+                        <p> گرفتن آخرین تغییرات و اشتراک </p>
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="news-letter" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                          <button type="submit" class="btn btn-primary shadow-none">شروع</button>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">ورود به اکانت</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-11">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-11" tabindex="-1" role="dialog" aria-labelledby="modal-11">
+                  <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <i class="flaticon-user d-block"></i>
+                        <h1>ورود به اکانت</h1>
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="email" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                          <div class="ms-form-group has-icon">
+                            <input type="password" placeholder="آدرس ایمیل" class="form-control" name="password" value="">
+                            <i class="material-icons">security</i>
+                          </div>
+                          <button type="submit" class="btn btn-primary shadow-none">ورود</button>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">فراموشی رمزعبور</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-12">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-12" tabindex="-1" role="dialog" aria-labelledby="modal-12">
+                  <div class="modal-dialog modal-dialog-centered modal-min" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <i class="flaticon-secure-shield d-block"></i>
+                        <h1>فراموشی رمزعبور?</h1>
+                        <p> ایمیل خود را برای ریکاوری رمزعبورتان وارد نمایید </p>
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="forgot-password" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                          <button type="submit" class="btn btn-primary shadow-none">بازگردانی رمزعبور</button>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ms-panel">
+            <div class="ms-panel-header">
+              <h6>مودال نوع 3</h6>
+            </div>
+            <div class="ms-panel-body">
+              <div class="row">
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">رضایت کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-13">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-13" tabindex="-1" role="dialog" aria-labelledby="modal-13">
+                  <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h1>مطمئن هستید؟</h1>
+                        <ul class="ms-list">
+                          <li class="ms-list-item media">
+                            <i class="flaticon-start align-self-center"></i>
+                            <div class="media-body">
+                              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                            </div>
+                          </li>
+                          <li class="ms-list-item media">
+                            <i class="flaticon-email align-self-center"></i>
+                            <div class="media-body">
+                              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                            </div>
+                          </li>
+                        </ul>
+                        <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-light" data-dismiss="modal">لغو</button>
+                          <button type="button" class="btn btn-primary shadow-none">شروع</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">انتخاب کاربر</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-14">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-14" tabindex="-1" role="dialog" aria-labelledby="modal-14">
+                  <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h1>اشتراک در خبرنامه</h1>
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
+                        <form method="post">
+                          <div class="ms-form-group has-icon">
+                            <input type="text" placeholder="آدرس ایمیل" class="form-control" name="subscribe" value="">
+                            <i class="material-icons">email</i>
+                          </div>
+                          <div class="modal-notice">
+                            <label class="ms-checkbox-wrap">
+                              <input type="checkbox" value="">
+                              <i class="ms-checkbox-check"></i>
+                            </label>
+                            <span>گرفتن پیام های تبلیغاتی </span>
+                          </div>
+                          <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-light" data-dismiss="modal">لغو</button>
+                            <button type="submit" class="btn btn-primary shadow-none">اشتراک</button>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <h6 class="section-title">یادآور</h6>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-15">کلیک کنید</button>
+                </div>
+                <div class="modal fade" id="modal-15" tabindex="-1" role="dialog" aria-labelledby="modal-15">
+                  <div class="modal-dialog modal-dialog-centered modal-max" role="document">
+                    <div class="modal-content">
+
+                      <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h1>یادآوری حریم خصوصی از سایت ما</h1>
+                        <p> یادآوری حریم خصوصی از سایت ما</p>
+                        <div class="accordion has-gap ms-accordion-chevron" id="accordionExample2">
+                          <div class="card">
+                            <div class="card-header" data-toggle="collapse" data-target="#collapseFour" role="button" aria-expanded="true" aria-controls="collapseFour">
+                              <span> ما کوکی ها برای امنیت بیشتر سایت ارتقا دادیم ایم </span>
+                            </div>
+
+                            <div id="collapseFour" class="collapse show" data-parent="#accordionExample2">
+                              <div class="card-body">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header" data-toggle="collapse" data-target="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
+                              <span> چه داده هایی را پردازش میکنیم؟ </span>
+                            </div>
+
+                            <div id="collapseFive" class="collapse" data-parent="#accordionExample2">
+                              <div class="card-body">
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. 
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-light" data-dismiss="modal">لغو</button>
+                          <button type="button" class="btn btn-primary shadow-none" data-dismiss="modal">ادامه</button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+ 
+  <!-- MODALS -->
+
+  
+      <!-- Quick bar -->
+  <aside id="ms-quick-bar" class="ms-quick-bar fixed ms-d-block-lg">
+
+    <ul class="nav nav-tabs ms-quick-bar-list" role="tablist">
+
+      <li class="ms-quick-bar-item ms-has-qa" role="presentation" data-toggle="tooltip" data-placement="left" title="لیست کارها" data-title="لیست کارها">
+        <a href="#qa-toDo" aria-controls="qa-toDo" role="tab" data-toggle="tab">
+          <i class="flaticon-list"></i>
+          
+        </a>
+      </li>
+      <li class="ms-quick-bar-item ms-has-qa" role="presentation" data-toggle="tooltip" data-placement="left" title="یادآور" data-title="یادآور">
+        <a href="#qa-reminder" aria-controls="qa-reminder" role="tab" data-toggle="tab">
+          <i class="flaticon-bell"></i>
+          
+        </a>
+      </li>
+      <li class="ms-quick-bar-item ms-has-qa" role="presentation" data-toggle="tooltip" data-placement="left" title="یادداشت کردن" data-title="یادداشت ها">
+        <a href="#qa-notes" aria-controls="qa-notes" role="tab" data-toggle="tab">
+          <i class="flaticon-pencil"></i>
+          
+        </a>
+      </li>
+      <li class="ms-quick-bar-item ms-has-qa" role="presentation" data-toggle="tooltip" data-placement="left" title="دعوت از دوستان" data-title="دعوت از دوستان">
+        <a href="#qa-invite" aria-controls="qa-invite" role="tab" data-toggle="tab">
+          <i class="flaticon-share-1"></i>
+          
+        </a>
+      </li>
+      <li class="ms-quick-bar-item ms-has-qa" role="presentation" data-toggle="tooltip" data-placement="left" title="تنظیمات" data-title="تنظیمات">
+        <a href="#qa-settings" aria-controls="qa-settings" role="tab" data-toggle="tab">
+          <i class="flaticon-gear"></i>
+          
+        </a>
+      </li>
+    </ul>
+        <div class="ms-configure-qa" data-toggle="tooltip" data-placement="left" title="دسترسی سریع">
+
+      <a href="#">
+        <i class="flaticon-hammer"></i>
+        
+      </a>
+
+    </div>
+
+
+    <!-- Quick bar Content -->
+    <div class="ms-quick-bar-content">
+
+      <div class="ms-quick-bar-header clearfix">
+        <h5 class="ms-quick-bar-title float-left">عنوان</h5>
+        <button type="button" class="close ms-toggler" data-target="#ms-quick-bar" data-toggle="hideQuickBar" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+
+      <div class="ms-quick-bar-body tab-content">
+
+
+
+        <div role="tabpanel" class="tab-pane" id="qa-toDo">
+          <div class="ms-quickbar-container ms-todo-list-container ms-scrollable">
+
+            <form class="ms-add-task-block">
+              <div class="form-group mx-3 mt-0  fs-14 clearfix">
+                <input type="text" class="form-control fs-14 float-left" id="task-block" name="todo-block" placeholder="افزودن کار" value="">
+                <button type="submit" class="ms-btn-icon bg-primary float-right"><i class="material-icons text-disabled">add</i></button>
+              </div>
+            </form>
+
+            <ul class="ms-todo-list">
+              <li class="ms-card ms-qa-card ms-deletable">
+
+                <div class="ms-card-header clearfix">
+                  <h6 class="ms-card-title">عنوان کار</h6>
+                  <button data-toggle="tooltip" data-placement="left" title="افزودن کار" class="ms-add-task-to-block ms-btn-icon float-right"> <i class="material-icons text-disabled">add</i> </button>
+                </div>
+
+                <div class="ms-card-body">
+                  <ul class="ms-list ms-task-block">
+                    <li class="ms-list-item ms-to-do-task ms-deletable">
+                      <label class="ms-checkbox-wrap ms-todo-complete">
+                        <input type="checkbox" value="">
+                        <i class="ms-checkbox-check"></i>
+                      </label>
+                      <span>کار مورد نظر</span>
+                      <button type="submit" class="close"><i class="flaticon-trash ms-delete-trigger"> </i></button>
+                    </li>
+                    <li class="ms-list-item ms-to-do-task ms-deletable">
+                      <label class="ms-checkbox-wrap ms-todo-complete">
+                        <input type="checkbox" value="">
+                        <i class="ms-checkbox-check"></i>
+                      </label>
+                      <span>کار مورد نظر</span>
+                      <button type="submit" class="close"><i class="flaticon-trash ms-delete-trigger"> </i></button>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="ms-card-footer clearfix">
+                  <a href="#" class="text-disabled mr-2"> <i class="flaticon-archive"> </i> آرشیو </a>
+                  <a href="#" class="text-disabled  ms-delete-trigger float-right"> <i class="flaticon-trash"> </i> حذف</a>
+                </div>
+
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="qa-reminder">
+          <div class="ms-quickbar-container ms-reminders">
+
+            <ul class="ms-qa-options">
+              <li> <a href="#" data-toggle="modal" data-target="#reminder-modal"> <i class="flaticon-bell"></i> یادآور جدید</a> </li>
+            </ul>
+
+            <div class="ms-quickbar-container ms-scrollable">
+
+              <div class="ms-card ms-qa-card ms-deletable">
+                <div class="ms-card-body">
+                  <p> جلسه هماهنگی پروژه </p>
+                  <span class="text-disabled fs-12"><i class="material-icons fs-14">access_time</i> امروز ، 3:45 بعد از ظهر</span>
+                </div>
+                <div class="ms-card-footer clearfix">
+
+                  <div class="ms-note-editor float-right">
+                    <a href="#" class="text-disabled mr-2" data-toggle="modal" data-target="#reminder-modal"> <i class="flaticon-pencil"> </i> ویرایش</a>
+                    <a href="#" class="text-disabled  ms-delete-trigger"> <i class="flaticon-trash"> </i> حذف</a>
+                  </div>
+
+                </div>
+              </div>
+              <div class="ms-card ms-qa-card ms-deletable">
+                <div class="ms-card-body">
+                  <p> شروع کار روی ورژن دوم پروژه </p>
+                  <span class="text-disabled fs-12"><i class="material-icons fs-14">access_time</i> فردا ، 12:00 بعد از ظهر</span>
+                </div>
+                <div class="ms-card-footer clearfix">
+
+                  <div class="ms-note-editor float-right">
+                    <a href="#" class="text-disabled mr-2" data-toggle="modal" data-target="#reminder-modal"> <i class="flaticon-pencil"> </i> ویرایش</a>
+                    <a href="#" class="text-disabled  ms-delete-trigger"> <i class="flaticon-trash"> </i> حذف</a>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="qa-notes">
+
+          <ul class="ms-qa-options">
+            <li> <a href="#" data-toggle="modal" data-target="#notes-modal"> <i class="flaticon-sticky-note"></i> یادداشت جدید</a> </li>
+            <li> <a href="#"> <i class="flaticon-excel"></i> تبدیل به اکسل </a> </li>
+          </ul>
+
+          <div class="ms-quickbar-container ms-scrollable">
+
+            <div class="ms-card ms-qa-card ms-deletable">
+              <div class="ms-card-header">
+                <h6 class="ms-card-title">جلسه هماهنگی با طراحان</h6>
+              </div>
+              <div class="ms-card-body">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                </p>
+                <ul class="ms-note-members clearfix mb-0">
+                  <li class="ms-deletable"> <img src="../../assets/img/people/people-3.jpg" alt="member"> </li>
+                  <li class="ms-deletable"> <img src="../../assets/img/people/people-5.jpg" alt="member"> </li>
+                </ul>
+              </div>
+              <div class="ms-card-footer clearfix">
+
+                <div class="dropdown float-left">
+                  <a href="#" class="text-disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="flaticon-share-1"></i> اشتراک‌گذاری
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-menu-header">
+                      <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">اشتراک با</span></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="ms-scrollable ms-dropdown-list ms-members-list">
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-10.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>بهمن صادقی</span>
+                        </div>
+                      </a>
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-9.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>علی احمدی</span>
+                        </div>
+                      </a>
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-7.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>صنم صفایی</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ms-note-editor float-right">
+                  <a href="#" class="text-disabled mr-2" data-toggle="modal" data-target="#notes-modal"> <i class="flaticon-pencil"> </i> ویرایش</a>
+                  <a href="#" class="text-disabled  ms-delete-trigger"> <i class="flaticon-trash"> </i> حذف</a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="ms-card ms-qa-card ms-deletable">
+              <div class="ms-card-header">
+                <h6 class="ms-card-title">انجام یونیت تست ها</h6>
+              </div>
+              <div class="ms-card-body">
+                <p>
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است 
+                </p>
+                <ul class="ms-note-members clearfix mb-0">
+                  <li class="ms-deletable"> <img src="../../assets/img/people/people-9.jpg" alt="member"> </li>
+                </ul>
+              </div>
+              <div class="ms-card-footer clearfix">
+
+                <div class="dropdown float-left">
+                  <a href="#" class="text-disabled" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="flaticon-share-1"></i> اشتراک‌گذاری
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-menu-header">
+                      <h6 class="dropdown-header ms-inline m-0"><span class="text-disabled">اشتراک با</span></h6>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li class="ms-scrollable ms-dropdown-list ms-members-list">
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-10.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>بهمن صادقی</span>
+                        </div>
+                      </a>
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-9.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>علی احمدی</span>
+                        </div>
+                      </a>
+                      <a class="media p-2" href="#">
+                        <div class="mr-2 align-self-center">
+                          <img src="../../assets/img/people/people-7.jpg" class="ms-img-round" alt="people">
+                        </div>
+                        <div class="media-body">
+                          <span>صنم صفایی</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="ms-note-editor float-right">
+                  <a href="#" class="text-disabled mr-2" data-toggle="modal" data-target="#notes-modal"> <i class="flaticon-pencil"> </i> ویرایش</a>
+                  <a href="#" class="text-disabled  ms-delete-trigger"> <i class="flaticon-trash"> </i> حذف</a>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="qa-invite">
+
+          <div class="ms-quickbar-container text-center ms-invite-member">
+            <i class="flaticon-network"></i>
+            <p>دعوت اعضای گروه</p>
+            <form>
+              <div class="ms-form-group">
+                <input type="text" placeholder="ایمیل" class="form-control" name="ایمیل" value="">
+              </div>
+              <div class="ms-form-group">
+                <button type="submit" name="invite-member" class="btn btn-primary w-100">دعوت کردن</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="qa-settings">
+
+          <div class="ms-quickbar-container text-center ms-invite-member">
+            <div class="row">
+              <div class="col-md-12 text-left mb-5">
+                  <h4 class="section-title bold">سفارشی سازی</h4>
+                <div>
+                  <label class="ms-switch">
+                     <input type="checkbox" id="dark-mode">
+                     <span class="ms-switch-slider round"></span>
+                   </label>
+                  <span>زمینه تیره </span>
+                </div>
+                <div>
+                  <label class="ms-switch">
+                     <input type="checkbox" id="remove-quickbar">
+                     <span class="ms-switch-slider round"></span>
+                   </label>
+                  <span> حذف نوار </span>
+                </div>
+              </div>
+              <div class="col-md-12 text-left">
+        <h4 class="section-title bold">شرتکات کیبرد</h4>
+        <p class="ms-directions mb-0"><code>Esc</code> بستن نوار</p>
+        <p class="ms-directions mb-0"><code>Alt + (1 -&gt; 6)</code> باز کردن نوار</p>
+        <p class="ms-directions mb-0"><code>Alt + Q</code> فعالسازی کانفیگ بار</p>
+
+      </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Reminder Modal -->
+  <div class="modal fade" id="reminder-modal" tabindex="-1" role="dialog" aria-labelledby="reminder-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header bg-secondary">
+          <h5 class="modal-title has-icon text-white"> یادآور جدید</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <form>
+
+        <div class="modal-body">
+
+          <div class="ms-form-group">
+            <label>یادآور درباره</label>
+            <textarea class="form-control" name="reminder"></textarea>
+          </div>
+
+          <div class="ms-form-group">
+            <span class="ms-option-name fs-14">تکرار روزانه</span>
+            <label class="ms-switch float-right">
+              <input type="checkbox">
+              <span class="ms-switch-slider round"></span>
+            </label>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="ms-form-group">
+                <input type="text" class="form-control datepicker" name="reminder-date" value="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="ms-form-group">
+                <select class="form-control" name="reminder-time">
+                  <option value="">12:00بعد از ظهر</option>
+                  <option value="">1:00بعد از ظهر</option>
+                  <option value="">2:00بعد از ظهر</option>
+                  <option value="">3:00بعد از ظهر</option>
+                  <option value="">4:00بعد از ظهر</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+          <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">افزودن یادآور</button>
+        </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Notes Modal -->
+  <div class="modal fade" id="notes-modal" tabindex="-1" role="dialog" aria-labelledby="notes-modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header bg-secondary">
+          <h5 class="modal-title has-icon text-white" id="NoteModal">یادداشت جدید</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+
+        <form>
+
+        <div class="modal-body">
+
+          <div class="ms-form-group">
+            <label>عنوان یادداشت</label>
+            <input type="text" class="form-control" name="note-title" value="">
+          </div>
+
+          <div class="ms-form-group">
+            <label>توضیحات</label>
+            <textarea class="form-control" name="note-description"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">بستن</button>
+          <button type="button" class="btn btn-secondary shadow-none" data-dismiss="modal">افزودن یادداشت</button>
+        </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <!-- Global Required Scripts Start -->
+  <script src="../../assets/js/jquery-3.3.1.min.js"></script>
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/perfect-scrollbar.js"> </script>
+  <script src="../../assets/js/jquery-ui.min.js"> </script>
+  <!-- Global Required Scripts End -->
+
+  <!-- Costic core JavaScript -->
+  <script src="../../assets/js/framework.js"></script>
+
+  <!-- Settings -->
+  <script src="../../assets/js/settings.js"></script>
+
+</body>
+
+
+<!-- Mirrored from slidesigma.com/themes/html/costic/pages/ui-advanced/modals.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jan 2020 10:34:58 GMT -->
+</html>

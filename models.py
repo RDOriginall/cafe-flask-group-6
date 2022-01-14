@@ -316,3 +316,17 @@ class Reciept:
         return price
 
 
+class Comments:
+    def __init__(self,name, email, comment):
+        self.name = name
+        self.email = email
+        self.comment = comment
+        
+    def add_comment_to_db(self):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(# query)
+        conn.close()       

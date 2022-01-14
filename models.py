@@ -78,6 +78,17 @@ class Manager:
             print("invalid phone number please register!!")
             return False
       
+    def check_username(self, username):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT username FROM manager")
+                all_usernames = curs.fetchall()
+        if self.username in all_usernames:
+            return True
+        else:
+            print("Your username or password is incorrect!")
+            return False
         
     def check_password(self, password):
         conn = Manager.start_database()

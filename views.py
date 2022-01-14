@@ -7,7 +7,8 @@ def index():
     if request.method == 'GET':
         menu = menu_data()
         images = image_urls(len(menu))
-        return render_template('index.html', menu=menu, images=images)
+        categories = Category.show_categories()
+        return render_template('index.html', menu=menu, images=images, categories=categories)
     elif request.method == 'POST':
         return "Message received!\nThank you."
     return render_template('index.html')

@@ -6,7 +6,7 @@ from utils import *
 def index():
     if request.method == 'GET':
         menu = menu_data()
-        images = image_urls(len(menu))
+        images = image_urls(max([item['id'] for item in menu]))
         categories = Category.show_categories()
         return render_template('index.html', menu=menu, images=images, categories=categories)
     elif request.method == 'POST':

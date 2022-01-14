@@ -7,20 +7,14 @@
         <div class="col"></div>
         <div class="col-md-10 col-12">
             <div class="container-fluid">
-                {% for category in [1,2,3] %}
+                {% for category in categories %}
                     <div class="row justify-content-center pt-5">
                         <span class="bg-white rounded-pill text-center text-danger w-auto" style="font-size: 40px;">
-                            {% if category ==1 %}
-                                Breakfast
-                            {% elif category==2 %}
-                                Lunch
-                            {% elif category==3 %}
-                                Dinner
-                            {% endif %}
+                            {{ category[1] }}
                         </span>
                         <div class="row justify-content-center">
                             {% for item in menu %}
-                                {% if item['category']==category %}
+                                {% if item['category']==category[0] %}
                                     <div class="col-4 col-md-3 m-1 p-2 h-auto border"
                                          style="background-color: #f0a8ae; border-radius: 20px;">
                                         <div class="row">

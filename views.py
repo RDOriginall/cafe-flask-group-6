@@ -9,6 +9,11 @@ def index():
         images = image_urls(len(menu))
         return render_template('index.html', menu=menu, images=images)
     elif request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        comment = request.form.get('comment')
+        cm = Comments(name, email, comment)
+        cm.add_comment_to_db()
         return "Message received!\nThank you."
     return render_template('index.html')
 

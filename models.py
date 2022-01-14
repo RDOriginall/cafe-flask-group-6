@@ -328,5 +328,6 @@ class Comments:
         
         with conn:
             with conn.cursor() as curs:
-                curs.execute(# query)
+                curs.execute("INSERT INTO comments (name, email, comment) VALUES (%s, %s, %s);"
+                             , (self.name, self.email, self,comment))
         conn.close()       

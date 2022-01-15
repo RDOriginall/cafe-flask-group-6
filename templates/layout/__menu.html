@@ -15,7 +15,7 @@
                     <div class="row justify-content-center">
                         {% for item in menu %}
                         {% if item['category']==category[0] %}
-                        <div class="col-4 col-md-3 m-1 p-2 h-auto border"
+                        <div class="col-4 col-md-3 m-0 p-2 h-auto border"
                              style="background-color: #e99f70; border-radius: 20px;">
                             <div class="row">
                                 <img src="{{ images[item['id']] }}" alt=""
@@ -29,9 +29,9 @@
                                 <p class="text-center" style="font-size: 25px;"><b>{{ item['price'] }}</b> Toman</p>
                             </div>
                             <div class="row justify-content-center px-3">
-                                <input type="text" value="{{item['id']}}" name="id" style="display: none;">
-                                <input type="text" value="{{item['name']}}" name="name" style="display: none;">
-                                <input type="text" value="{{item['price']}}" name="price" style="display: none;">
+                                <input type="hidden" value="{{item['id']}}" name="id">
+                                <input type="hidden" value="{{item['name']}}" name="name">
+                                <input type="hidden" value="{{item['price']}}" name="price">
                                 <input type="number" min="0" max="10" class="w-25">
                                 <input type="button" value="Add" class="btn btn-warning w-50 mx-1">
                             </div>

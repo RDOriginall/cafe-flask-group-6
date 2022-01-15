@@ -2,7 +2,7 @@ from models import Manager
 import argparse
 
 
-parser = argparse.ArgumentParser(description="Press -n to start!")
+parser = argparse.ArgumentParser(description="Press -nf to start!")
 parser.add_argument("-fn", "--fname", nargs="+", required=True, help="Insert -fn or --fname to write your first name!")
 parser.add_argument("-ln", "--lname", nargs="+", required=True, help="Insert -ln or --lname to write your last name!")
 parser.add_argument("-ph", "--phone", nargs="+", required=True, help="Insert -ph or --phone to write your phone number!")

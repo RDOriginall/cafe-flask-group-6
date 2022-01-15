@@ -31,13 +31,11 @@
         }
 
         .gradient-custom {
-        /* fallback for old browsers */
+
         background: #f6d365;
 
-        /* Chrome 10-25, Safari 5.1-6 */
         background: -webkit-linear-gradient(to right bottom, #6351ce, rgb(135, 101, 246));
 
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         background: linear-gradient(to right bottom, #6351ce, rgb(135, 101, 246))
       }
     </style>
@@ -46,7 +44,7 @@
 <body>
 {% block body %}
 {% include 'layout/__nav_manager.html' %}
-{% inclide 'main_manager.html' %}
+{% include 'main_manager.html' %}
 {% include 'layout/__footer_manager.html' %}
 {% endblock %}
 </body>

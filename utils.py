@@ -18,7 +18,7 @@ def menu_data():
 def image_urls(n):
     urls = []
     for i in range(1, n + 2):
-        urls.append(f"https://picsum.photos/200/200?random={i}")
+        urls.append(f"https://picsum.photos/200/100?random={i}")
     return urls
 
 

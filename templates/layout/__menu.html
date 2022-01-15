@@ -8,35 +8,38 @@
         <div class="col-md-10 col-12">
             <div class="container-fluid">
                 {% for category in categories %}
-                    <div class="row justify-content-center pt-5">
+                <div class="row justify-content-center pt-5">
                         <span class="bg-white rounded-pill text-center text-danger w-auto" style="font-size: 40px;">
-                            {{ category[1] }}
+                            {{ category[1].upper() }}
                         </span>
-                        <div class="row justify-content-center">
-                            {% for item in menu %}
-                                {% if item['category']==category[0] %}
-                                    <div class="col-4 col-md-3 m-1 p-2 h-auto border"
-                                         style="background-color: #f0a8ae; border-radius: 20px;">
-                                        <div class="row">
-                                            <img src="{{ images[item['id']] }}" alt=""
-                                                 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
-                                        </div>
-                                        <div class="row">
+                    <div class="row justify-content-center">
+                        {% for item in menu %}
+                        {% if item['category']==category[0] %}
+                        <div class="col-4 col-md-3 m-1 p-2 h-auto border"
+                             style="background-color: #e99f70; border-radius: 20px;">
+                            <div class="row">
+                                <img src="{{ images[item['id']] }}" alt=""
+                                     style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                            </div>
+                            <div class="row">
                                         <span class="rounded-pill w-auto"
                                               style="background-color: #FFE9AD; font-size: 20px">{{ item['name'].title() }}</span>
-                                        </div>
-                                        <div class="row">
-                                            <p class="text-center" style="font-size: 25px;"><b>{{ item['price'] }}</b> Toman</p>
-                                        </div>
-                                        <div class="row justify-content-center px-3">
-                                            <input type="number" class="w-25">
-                                            <input type="button" value="Add" class="btn btn-warning w-50 mx-1">
-                                        </div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+                            </div>
+                            <div class="row">
+                                <p class="text-center" style="font-size: 25px;"><b>{{ item['price'] }}</b> Toman</p>
+                            </div>
+                            <div class="row justify-content-center px-3">
+                                <input type="text" value="{{item['id']}}" name="id" style="display: none;">
+                                <input type="text" value="{{item['name']}}" name="name" style="display: none;">
+                                <input type="text" value="{{item['price']}}" name="price" style="display: none;">
+                                <input type="number" min="0" max="10" class="w-25">
+                                <input type="button" value="Add" class="btn btn-warning w-50 mx-1">
+                            </div>
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </div>
+                </div>
                 {% endfor %}
             </div>
             <div class="col"></div>

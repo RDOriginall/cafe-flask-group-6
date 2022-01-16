@@ -6,8 +6,9 @@ from utils import *
 def index():
     if request.method == 'GET':
         menu = menu_data()
-        images = image_urls(len(menu))
-        return render_template('index.html', menu=menu, images=images)
+        images = image_urls(max([item['id'] for item in menu]))
+        categories = Category.show_categories()
+        return render_template('index.html', menu=menu, images=images, categories=categories)
     elif request.method == 'POST':
         name = request.form.get('name')
         email = request.form.get('email')
@@ -91,12 +92,31 @@ def edit_menu_item(item_id):
     if request.method == 'GET':
         item = MenuItem.get_by_id(int(item_id))
         data = {
+            'id': item_id,
             'name':item.name,
             'price':item.price,
-            'discount':item.discount
+            'discount':item.discount,
+            'category': item.category_id
         }
-        return render_template('add_menu_item.html', data=data)
+        return render_template('edit_menu_item.html', data=data)
     elif request.method == 'POST':
-        pass
+        item = MenuItem.get_by_id(int(request.form.get('id')))
+        item.name = str(request.form.get('name'))
+        item.price = int(request.form.get('price'))
+        item.discount = float(request.form.get('discount'))
+        item.category_id = int(request.form.get('category'))
+        item.update_database()
+        return 'Item updated!', 201
+    else:
+        return 'Wrong request!', 403
+    
+def delete_menu_item():
+    if request.method == 'GET':
+        return render_template('delete_menu_item.html')
+    elif request.method == 'POST':
+        item_id = int(request.form.get('id'))
+        item = MenuItem.get_by_id(item_id)
+        item.delete_from_database()
+        return 'Item deleted!'
     else:
         return 'Wrong request!', 403

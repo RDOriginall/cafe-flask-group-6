@@ -30,9 +30,9 @@
                             </div>
                             <div class="row justify-content-center px-3">
                                 <input type="hidden" value="{{item['id']}}" name="id">
-                                <input type="hidden" value="{{item['name']}}" name="name">
+                                <input type="hidden" value="{{item['name'].title()}}" name="name">
                                 <input type="hidden" value="{{item['price']}}" name="price">
-                                <input type="number" min="1" max="10" class="w-25">
+                                <input type="number" value=1 min="1" max="10" class="w-25">
                                 <input type="button" value="Add" onclick="addToOrder(this)" class="btn btn-warning w-50 mx-1">
                             </div>
                         </div>

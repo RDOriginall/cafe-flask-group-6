@@ -27,7 +27,30 @@
 
 {# for adding item to the order-modal we use this section #}
 <div style="display: none;">
-        <div class="row m-1 bg-warning" style="height: 10vh;" id="items-in-modal">
-            <p>Name: <span class="item-name"></span>, Price: <span class="item-price"></span>, Number: <span class="item-number"></span></p>
+    <div class="row m-1 bg-warning align-items-center py-2 rounded-pill" style="height: auto;" id="items-in-modal">
+        <div class="row align-items-center">
+            <div class="col text-center">
+                <div class="row align-items-center">
+                    <div class="col-sm-7 col-12">
+                        <span class="item-name" style="color: #483120; font-size: 25px;"></span>
+                    </div>
+                    <div class="col-sm-2 col-7" style="font-size: 20px;">
+                        <span class="item-price"></span>
+                    </div>
+                    <div class="col-sm-3 col-5">
+                        <div class="row justify-content-center">
+                            <div class="col-auto btn btn-sm btn-danger" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;"><i class="fa fa-minus"></i></div>
+                            <span class="col-auto item-number"></span>
+                            <div class="col-auto btn btn-sm btn-primary" style="border-top-right-radius: 50%; border-bottom-right-radius: 50%;"><i class="fa fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="btn btn-outline-danger rounded-pill">
+                    <i class="fa fa-trash"></i>
+                </div>
+            </div>
         </div>
+    </div>
 </div>

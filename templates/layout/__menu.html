@@ -32,8 +32,8 @@
                                 <input type="hidden" value="{{item['id']}}" name="id">
                                 <input type="hidden" value="{{item['name']}}" name="name">
                                 <input type="hidden" value="{{item['price']}}" name="price">
-                                <input type="number" min="0" max="10" class="w-25">
-                                <input type="button" value="Add" class="btn btn-warning w-50 mx-1">
+                                <input type="number" min="1" max="10" class="w-25">
+                                <input type="button" value="Add" onclick="addToOrder(this)" class="btn btn-warning w-50 mx-1">
                             </div>
                         </div>
                         {% endif %}

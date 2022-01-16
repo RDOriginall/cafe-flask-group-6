@@ -38,7 +38,7 @@ def add_menu_items():
         item.add_to_database()
         return 'successful!\nItem added to menu.'
     else:
-        return "Invalid Request!"
+        return "Invalid Request!", 403
 
 
 def add_manager():

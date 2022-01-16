@@ -1,4 +1,5 @@
-<div class="btn btn-order position-fixed rounded-pill" style="color: black; height: 70px; width:70px; left: 20px; bottom: 65px; border:2px solid brown;"
+<div class="btn btn-order position-fixed rounded-pill"
+     style="color: black; height: 70px; width:70px; left: 20px; bottom: 65px; border:2px solid brown;"
      data-bs-toggle="modal" data-bs-target="#orderModal">
     <div class="row justify-content-center align-items-center h-100">
         <img src="https://icons.iconarchive.com/icons/icons8/windows-8/512/Finance-Purchase-Order-icon.png" alt="Order">
@@ -12,8 +13,9 @@
                 <h5 class="modal-title" id="orderModalLabel">Orders</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                ...
+            <div class="modal-body" id="order-modal-body">
+                <div style="display: none;">No items yet</div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Back</button>
@@ -21,4 +23,11 @@
             </div>
         </div>
     </div>
+</div>
+
+{# for adding item to the order-modal we use this section #}
+<div style="display: none;">
+        <div class="row m-1 bg-warning" style="height: 10vh;" id="items-in-modal">
+            <p>Name: <span class="item-name"></span>, Price: <span class="item-price"></span>, Number: <span class="item-number"></span></p>
+        </div>
 </div>

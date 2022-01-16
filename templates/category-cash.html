@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include 'layout/__stylesheet_casheyer.html' %}
+
+</head>
+<body>
+{% block body %}
+{% include 'layout/__nav_manager.html' %}
+<div class="">
+    <div class="d-flex justify-content-start" style="margin-left: 1%">
+        <a>list category you can click to edit or delete or show </a>
+    </div>
+    <div>
+        {% for item in categorylist %}
+        <tr>
+            <button class="btn btn-link mx-auto">
+                {{ item.id }}
+                <a>=</a>
+                {{ item.name }}
+            </button>
+            <th>
+            </th>
+            <td>
+            </td>
+        </tr>
+        {% endfor %}
+        </table>
+
+    </div>
+</div>
+</div>
+{% include 'layout/__footer_manager.html' %}
+{% endblock %}
+
+</body>
+</html>

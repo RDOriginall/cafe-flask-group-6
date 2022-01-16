@@ -16,7 +16,8 @@
         } else {
             let item = $("#items-in-modal").clone().attr("id", `order-item-${_id}`)
             $(item).find('.item-name').append(`${name}`)
-            $(item).find('.item-price').append(`${price}`)
+            $(item).find('.item-price').append(`${price * number}`)
+            $(item).find('.item-price-constant').append(`${price}`)
             $(item).find('.item-number').append(`${number}`)
             $(item).appendTo("#order-modal-body")
         }
@@ -25,21 +26,29 @@
     function minusButton(button) {
         let elem = $(button).next()
         let number = Number(elem.text())
-        if ((number - 1) < 1 ) {
-            elem.text(1)
+        if ((number - 1) < 1) {
+            number = 1
         } else {
-            elem.text(number - 1)
+            number = number - 1
         }
+        elem.text(number)
+        let itemPrice = $(button).parent().parent().prev().find('.item-price')
+        let price = Number($(button).parent().parent().prev().find('.item-price-constant').text())
+        itemPrice.text(price * number)
     }
 
     function plusButton(button) {
         let elem = $(button).prev()
         let number = Number(elem.text())
-        if ((number + 1) > 10 ) {
-            elem.text(10)
+        if ((number + 1) > 10) {
+            number = 10
         } else {
-            elem.text(number + 1)
+            number = number + 1
         }
+        elem.text(number)
+        let itemPrice = $(button).parent().parent().prev().find('.item-price')
+        let price = Number($(button).parent().parent().prev().find('.item-price-constant').text())
+        itemPrice.text(price * number)
     }
 
     function trashButton(button) {

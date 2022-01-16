@@ -9,9 +9,9 @@
 <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header justify-content-center">
                 <h5 class="modal-title" id="orderModalLabel">Orders</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="display: none;"></button>
             </div>
             <div class="modal-body" id="order-modal-body">
                 <div style="display: none;">No items yet</div>
@@ -27,27 +27,27 @@
 
 {# for adding item to the order-modal we use this section #}
 <div style="display: none;">
-    <div class="row m-1 bg-warning align-items-center py-2 rounded-pill" style="height: auto;" id="items-in-modal">
+    <div class="row m-1 px-2 bg-warning align-items-center py-2 rounded-pill order-item" style="height: auto;" id="items-in-modal">
         <div class="row align-items-center">
             <div class="col text-center">
                 <div class="row align-items-center">
-                    <div class="col-sm-7 col-12">
+                    <div class="col-sm-6 col-12">
                         <span class="item-name" style="color: #483120; font-size: 25px;"></span>
                     </div>
-                    <div class="col-sm-2 col-7" style="font-size: 20px;">
+                    <div class="col-sm-3 col-7" style="font-size: 20px;">
                         <span class="item-price"></span>
                     </div>
                     <div class="col-sm-3 col-5">
                         <div class="row justify-content-center">
-                            <div class="col-auto btn btn-sm btn-danger" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;"><i class="fa fa-minus"></i></div>
+                            <div class="col-auto btn btn-sm btn-danger item-minus-btn" onclick="minusButton(this)" style="border-top-left-radius: 50%; border-bottom-left-radius: 50%;"><i class="fa fa-minus"></i></div>
                             <span class="col-auto item-number"></span>
-                            <div class="col-auto btn btn-sm btn-primary" style="border-top-right-radius: 50%; border-bottom-right-radius: 50%;"><i class="fa fa-plus"></i></div>
+                            <div class="col-auto btn btn-sm btn-primary item-plus-btn" onclick="plusButton(this)" style="border-top-right-radius: 50%; border-bottom-right-radius: 50%;"><i class="fa fa-plus"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-1">
-                <div class="btn btn-outline-danger rounded-pill">
+                <div class="btn btn-outline-danger rounded-pill item-trash-btn" onclick="trashButton(this)">
                     <i class="fa fa-trash"></i>
                 </div>
             </div>

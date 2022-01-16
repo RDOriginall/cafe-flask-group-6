@@ -9,6 +9,11 @@ def index():
         images = image_urls(len(menu))
         return render_template('index.html', menu=menu, images=images)
     elif request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        comment = request.form.get('comment')
+        cm = Comments(name, email, comment)
+        cm.add_comment_to_db()
         return "Message received!\nThank you."
     return render_template('index.html')
 
@@ -33,7 +38,7 @@ def add_menu_items():
         item.add_to_database()
         return 'successful!\nItem added to menu.'
     else:
-        return "Invalid Request!"
+        return "Invalid Request!", 403
 
 
 def add_manager():
@@ -68,11 +73,19 @@ def print_reciept(reciept_id):
         return "Message received!\nThank you."
 
 
-
-
-
 def manager_login():
-    pass
+    if request.method == 'GET':
+        return render_template('manager_login.html')
+    elif request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if username.check_username() and password.check_password():
+            return render_template('dashboard.html')
+        else:
+            return render_template('not_valid_input.html')
+    else:
+        return render_template('not_valid_request.html'), 403
+
 
 def edit_menu_item(item_id):
     if request.method == 'GET':
@@ -87,4 +100,3 @@ def edit_menu_item(item_id):
         pass
     else:
         return 'Wrong request!', 403
-

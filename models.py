@@ -88,6 +88,44 @@ class Manager:
         else:
             return f"Your username or password is incorrect!"
         
+    def check_phone(self, phone):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT phone_number FROM manager")
+                all_phones = curs.fetchall()
+        conn.close()
+        
+        if self.phone in all_phones:
+            return True
+        else:
+            print("invalid phone number please register!!")
+            return False
+      
+    def check_username(self, username):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT username FROM manager")
+                all_usernames = curs.fetchall()
+        if self.username in all_usernames:
+            return True
+        else:
+            print("Your username or password is incorrect!")
+            return False
+        
+    def check_password(self, password):
+        conn = Manager.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT password FROM manager")
+                all_passwords = curs.fetchall()
+        if self.password in all_passwords:
+            return True
+        else:
+            print("Your username or password is incorrect!")
+            return False
+        
 
 class MenuItem:
     def __init__(self, name, price, discount, category_id, manager_id) -> None:
@@ -344,4 +382,20 @@ class Reciept:
         conn.close()
         return list_id
 
-print(Reciept.order_send(3))
+
+
+class Comments:
+    def __init__(self,name, email, comment):
+        self.name = name
+        self.email = email
+        self.comment = comment
+        
+    def add_comment_to_db(self):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("INSERT INTO comments (name, email, comment) VALUES (%s, %s, %s);"
+                             , (self.name, self.email, self,comment))
+        conn.close()       

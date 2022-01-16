@@ -20,7 +20,7 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
-    <a type="button" class="btn btn-primary">Submit</a>
+    <a href="{{ url_for('dashboard') }}" type="button" class="btn btn-primary">Submit</a>
 </form>
 {% include 'layout/__footer_manager.html' %}
 {% endblock %}

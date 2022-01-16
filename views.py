@@ -71,3 +71,5 @@ def manager_login():
             return render_template('dashboard.html')
         else:
             return render_template('not_valid_input.html')
+    else:
+        return render_template('not_valid_request.html')

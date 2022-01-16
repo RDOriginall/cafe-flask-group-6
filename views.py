@@ -62,4 +62,12 @@ def dashboard():
 
 
 def manager_login():
-    pass
+    if request.method == 'GET':
+        return render_template('manager_login.html')
+    elif request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if username.check_username() and password.check_password():
+            return render_template('dashboard.html')
+        else:
+            return render_template('not_valid_input.html')

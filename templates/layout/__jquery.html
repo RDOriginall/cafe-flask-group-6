@@ -21,4 +21,28 @@
             $(item).appendTo("#order-modal-body")
         }
     }
+
+    function minusButton(button) {
+        let elem = $(button).next()
+        let number = Number(elem.text())
+        if ((number - 1) < 1 ) {
+            elem.text(1)
+        } else {
+            elem.text(number - 1)
+        }
+    }
+
+    function plusButton(button) {
+        let elem = $(button).prev()
+        let number = Number(elem.text())
+        if ((number + 1) > 10 ) {
+            elem.text(10)
+        } else {
+            elem.text(number + 1)
+        }
+    }
+
+    function trashButton(button) {
+        $(button).parent().parent().parent().remove()
+    }
 </script>

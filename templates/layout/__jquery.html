@@ -1,4 +1,26 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    
+    function addToOrder(elem) {
+        let inputs = $(elem).prevAll()
+        let _id = inputs[3].value
+        let name = inputs[2].value
+        let price = inputs[1].value
+        let number = Number(inputs[0].value)
+        if ($(`#order-item-${_id}`).length) {
+            let itemNumber = Number($(`#order-item-${_id}`).find('.item-number').text())
+            if ((number + itemNumber) <= 10) {
+                $(`#order-item-${_id}`).find('.item-number').text(itemNumber + number)
+            } else {
+                $(`#order-item-${_id}`).find('.item-number').text(10)
+            }
+        } else {
+            let item = $("#items-in-modal").clone().attr("id", `order-item-${_id}`)
+            $(item).find('.item-name').append(`${name}`)
+            $(item).find('.item-price').append(`${price}`)
+            $(item).find('.item-number').append(`${number}`)
+            $(item).appendTo("#order-modal-body")
+        }
+
+        {#$(`<p>${_id}, ${name}, ${price}, ${number}</p>`).appendTo("#order-modal-body")#}
+    }
 </script>

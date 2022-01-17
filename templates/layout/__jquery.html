@@ -109,7 +109,8 @@
             let _id = $(item).find('.item-id').text()
             itemsData[_id] = Number($(item).find('.item-number').text())
         }
-        console.log(itemsData)
+        {#console.log(itemsData)#}
+        let tableNumber = $('#table-number').text() {# توجه برای بعد #}
         $.ajax({
                 url: '{{ url_for('add_order') }}',
                 type: 'POST',

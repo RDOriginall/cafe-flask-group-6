@@ -103,9 +103,12 @@
     }
 
     function orderToDataBase() {
-        items = $('.order-item').slice(0, $('.order-item').length - 1)
+        let items = $('.order-item').slice(0, $('.order-item').length - 1)
+        let data = {}
         for (let item of items) {
+            data[$(item).find('.item-id').text()] = Number($(item).find('.item-number').text())
             console.log($(item).find('.item-id').text(), $(item).find('.item-number').text())
         }
+        console.log(data)
     }
 </script>

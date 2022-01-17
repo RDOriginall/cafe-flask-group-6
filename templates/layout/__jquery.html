@@ -76,19 +76,22 @@
 
     function sendComment(elem) {
         let form = $(elem).parent()
-        console.log($(form).find('#contact-name').val())
-        console.log($(form).find('#contact-text').val())
-        console.log($(form).find('#contact-email').val())
+        let name  = $(form).find('#contact-name')
+        let comment  = $(form).find('#contact-text')
+        let email  = $(form).find('#contact-email')
         $.ajax({
                 url: '{{ url_for('comment') }}',
                 type: 'POST',
                 data: {
-                    'name': $(form).find('#contact-name').val(),
-                    'comment': $(form).find('#contact-text').val(),
-                    'email': $(form).find('#contact-email').val(),
+                    'name': name.val(),
+                    'comment': comment.val(),
+                    'email': email.val(),
                 },
                 success: function (response, status, xmlHttpRequest) {
                     console.log("Response Received")
+                    $(name).val('')
+                    $(comment).val('')
+                    $(email).val('')
                     alert(response)
                 },
                 error: function () {

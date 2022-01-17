@@ -257,7 +257,7 @@ class Table():
                 curs.execute("SELECT * FROM tables;")
                 tables = curs.fetchall()
         conn.close()
-        return tables
+        return [table[0] for table in tables]
 
 class Category:
     def __init__(self, name):

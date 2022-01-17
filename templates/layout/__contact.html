@@ -6,7 +6,7 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-7 col-12 pb-5">
             <div class="row justify-content-center">
-                <form action="{{ url_for('index') }}" style="width: 90%;">
+                <form style="width: 90%;">
                     <div class="form-group">
                         <label for="contact-name">Name</label>
                         <input type="text" class="form-control" id="contact-name" placeholder="name" name="name">
@@ -18,9 +18,9 @@
                     </div>
                     <div class="form-group">
                         <label class="form-check-label" for="email">Email:</label>
-                        <input type="text" class="form-control" id="email" name="email">
+                        <input type="text" class="form-control" id="contact-email" name="email" placeholder="Enter your email">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-2 align-left">Submit</button>
+                    <div class="btn btn-primary mt-2 align-left" onclick="sendComment(this)">Submit</div>
                 </form>
             </div>
         </div>

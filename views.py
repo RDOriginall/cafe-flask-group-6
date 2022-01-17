@@ -143,9 +143,10 @@ def add_order():
         manager_id = 1
         receipt = Reciept(table_id, manager_id)
         for item_id in items_data.keys():
-            menu_item = MenuItem.get_by_id(item_id)
-            receipt.price += menu_item.price
-            receipt.final_price += menu_item.price * menu_item.discount
+            if item_id.isdigit():
+                menu_item = MenuItem.get_by_id(item_id)
+                receipt.price += menu_item.price * int(items_data[item_id])
+                receipt.final_price += int(menu_item.price * (100 - menu_item.discount) / 100) * int(items_data[item_id])
         receipt.add_to_db()
         for item_id in items_data.keys():
             order = OrderList(item_id, items_data[item_id], receipt.reciept_id, manager_id)

@@ -132,6 +132,9 @@ class MenuItem:
         self.category_id = category_id
         self.manager_id = manager_id
 
+    def get_prices(self):
+        return self.price, self.price * (self.discount/100)
+
     def add_to_database(self):
         conn = MenuItem.start_database()
         with conn:
@@ -189,7 +192,7 @@ class OrderList:
         self.number = number
         self.reciept_id = reciept_id  # Reciept.get_by_id(reciept_id)
         self.manager_id = manager_id
-        self.status = 'cooking'
+        self.status = 1  # {1: 'cooking', 2: 'ready', 3:'served'}
 
     def set_status(self):
         pass  # TODO
@@ -199,8 +202,8 @@ class OrderList:
         with conn:
             with conn.cursor() as curs:
                 curs.execute(
-                    "INSERT INTO order_list(menu_item_id, number, reciept_id, manager_id, status) VALUES (%s,%s,%s,%s,%s);"
-                    , (self.menu_item_id, self.number, self.reciept_id, self.manager_id, self.status))
+                    "INSERT INTO order_list (menu_item_id, number, reciept_id, manager_id, status) VALUES (%s, %s, %s, %s, %s);",
+                    (self.menu_item_id, self.number, self.reciept_id, self.manager_id, self.status))
                 # finding id of instance
                 curs.execute("SELECT * FROM order_list;")
                 self.id = curs.fetchall()[-1][0]
@@ -301,6 +304,8 @@ class Reciept:
     def __init__(self, table_id, manger_id):
         self.table_id = table_id
         self.manger_id = manger_id
+        self.price = 0
+        self.final_price = 0
 
     def add_to_db(self):
         conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
@@ -309,7 +314,7 @@ class Reciept:
             with conn.cursor() as curs:
                 curs.execute(
                     "insert into reciept(table_id,price,final_price,status,manager_id,reciept_time) values (%s,%s,%s,%s,%s,%s); ",
-                    (self.table_id, 0, 0, False, self.manger_id, datetime.now(),))
+                    (self.table_id, self.price, self.final_price, False, self.manger_id, datetime.now(),))
                 curs.execute("select * from reciept;")
                 self.reciept_id = curs.fetchall()[-1][0]
         conn.close()

@@ -15,6 +15,7 @@
             }
         } else {
             let item = $("#items-in-modal").clone().attr("id", `order-item-${_id}`)
+            $(item).find('.item-id').append(`${_id}`)
             $(item).find('.item-name').append(`${name}`)
             $(item).find('.item-price').append(`${price * number}`)
             $(item).find('.item-price-input').val(`${price * number}`)
@@ -76,9 +77,9 @@
 
     function sendComment(elem) {
         let form = $(elem).parent()
-        let name  = $(form).find('#contact-name')
-        let comment  = $(form).find('#contact-text')
-        let email  = $(form).find('#contact-email')
+        let name = $(form).find('#contact-name')
+        let comment = $(form).find('#contact-text')
+        let email = $(form).find('#contact-email')
         $.ajax({
                 url: '{{ url_for('comment') }}',
                 type: 'POST',
@@ -99,5 +100,12 @@
                 }
             }
         )
+    }
+
+    function orderToDataBase() {
+        items = $('.order-item').slice(0, $('.order-item').length - 1)
+        for (let item of items) {
+            console.log($(item).find('.item-id').text(), $(item).find('.item-number').text())
+        }
     }
 </script>

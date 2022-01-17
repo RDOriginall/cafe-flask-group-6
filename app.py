@@ -17,7 +17,7 @@ app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET
 # new
 app.add_url_rule('/comment/', 'comment', comment, methods=['POST'])
 app.add_url_rule('/add_order/', 'add_order', add_order, methods=['POST'])
-app.add_url_rule('/get_tables/', 'get_tables', get_tables, methods=['POST'])
+app.add_url_rule('/get_tables/', 'get_tables', get_tables, methods=['GET'])
 
 
 if __name__ == '__main__':

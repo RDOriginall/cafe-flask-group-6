@@ -16,6 +16,7 @@ app.add_url_rule('/delete_menu_item/', 'delete_menu_item', delete_menu_item, met
 app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET', 'POST'])
 # new
 app.add_url_rule('/comment/', 'comment', comment, methods=['POST'])
+app.add_url_rule('/add_order/', 'add_order', add_order, methods=['POST'])
 
 
 if __name__ == '__main__':

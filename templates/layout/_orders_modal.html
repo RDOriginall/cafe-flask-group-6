@@ -20,7 +20,7 @@
             <div class="modal-footer">
                 <div class="col text-center">Total: <span id="modal-total">0</span></div>
                 <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Back</button>
-                <button type="button" class="btn btn-danger">Order</button>
+                <button type="button" class="btn btn-danger" onclick="orderToDataBase()">Order</button>
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@
             <div class="col text-center">
                 <div class="row align-items-center">
                     <div class="col-sm-6 col-12">
+                        <span class="item-id" style="display: none;"></span>
                         <span class="item-name" style="color: #483120; font-size: 25px;"></span>
                     </div>
                     <div class="col-sm-3 col-7" style="font-size: 20px;">

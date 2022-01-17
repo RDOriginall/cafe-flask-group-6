@@ -73,4 +73,28 @@
         }
         $('#modal-total').text(total)
     }
+
+    function sendComment(elem) {
+        let form = $(elem).parent()
+        console.log($(form).find('#contact-name').val())
+        console.log($(form).find('#contact-text').val())
+        console.log($(form).find('#contact-email').val())
+        $.ajax({
+                url: '{{ url_for('comment') }}',
+                type: 'POST',
+                data: {
+                    'name': $(form).find('#contact-name').val(),
+                    'comment': $(form).find('#contact-text').val(),
+                    'email': $(form).find('#contact-email').val(),
+                },
+                success: function (response, status, xmlHttpRequest) {
+                    console.log("Response Received")
+                    alert(response)
+                },
+                error: function () {
+                    console.log('Error!')
+                }
+            }
+        )
+    }
 </script>

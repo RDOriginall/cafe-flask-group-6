@@ -134,3 +134,22 @@ def comment():
         return f'Thank you {name} for your comment'
     else:
         return 'Wrong request!', 403
+
+
+def add_order():
+    if request.method == 'POST':
+        items_data = dict(request.form)
+        table_id = 2
+        manager_id = 1
+        receipt = Reciept(table_id, manager_id)
+        for item_id in items_data.keys():
+            menu_item = MenuItem.get_by_id(item_id)
+            receipt.price += menu_item.price
+            receipt.final_price += menu_item.price * menu_item.discount
+        receipt.add_to_db()
+        for item_id in items_data.keys():
+            order = OrderList(item_id, items_data[item_id], receipt.reciept_id, manager_id)
+            order.add_to_database()
+        return "Order added successfully!"
+    else:
+        return 'Wrong request!', 403

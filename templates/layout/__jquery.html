@@ -110,7 +110,7 @@
             itemsData[_id] = Number($(item).find('.item-number').text())
         }
         {#console.log(itemsData)#}
-        let tableNumber = $('#table-number').text() {# توجه برای بعد #}
+        itemsData['tableNumber'] = $('#table-number').text()
         $.ajax({
                 url: '{{ url_for('add_order') }}',
                 type: 'POST',
@@ -127,15 +127,16 @@
     }
 
     function getTables(elem) {
-        let modalBody = $(elem).parent().parent().find('.modal-body')
-        let button = $('#tableButton').clone().attr('id', '')
+        let modalBody = $(elem).parent().parent().find('.modal-body div')
         $.ajax("{{ url_for('get_tables') }}", {
                 type: 'GET',
                 success: function (response, status, xmlHttpRequest) {
                     console.log(response)
                     let tables = response['tables']
+                    $(modalBody).text('')
                     console.log(tables)
                     for (table of tables){
+                        let button = $('#tableButton').clone().attr('id', '')
                         $(button).find('.table-button-data').text(table)
                         $(button).appendTo(modalBody)
                     }
@@ -145,5 +146,10 @@
                 }
             }
         )
+    }
+
+    function setTableNumber(elem) {
+        let tableNumber = $(elem).children().text()
+        $(elem).parent().parent().parent().find('.modal-footer span').text(tableNumber)
     }
 </script>

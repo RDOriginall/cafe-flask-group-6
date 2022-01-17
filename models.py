@@ -184,6 +184,7 @@ class MenuItem:
 
 class OrderList:
     def __init__(self, menu_item_id, number, reciept_id, manager_id):
+        self.menu_item_id = menu_item_id
         self.menu_item = MenuItem.get_by_id(menu_item_id)
         self.number = number
         self.reciept_id = reciept_id  # Reciept.get_by_id(reciept_id)
@@ -192,6 +193,18 @@ class OrderList:
 
     def set_status(self):
         pass  # TODO
+
+    def add_to_database(self):
+        conn = OrderList.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute(
+                    "INSERT INTO order_list(menu_item_id, number, reciept_id, manager_id, status) VALUES (%s,%s,%s,%s,%s);"
+                    , (self.menu_item_id, self.number, self.reciept_id, self.manager_id, self.status))
+                # finding id of instance
+                curs.execute("SELECT * FROM order_list;")
+                self.id = curs.fetchall()[-1][0]
+        conn.close()
 
     @classmethod
     def get_by_id(cls, obj_id):

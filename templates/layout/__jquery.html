@@ -125,4 +125,25 @@
             }
         )
     }
+
+    function getTables(elem) {
+        let modalBody = $(elem).parent().parent().find('.modal-body')
+        let button = $('#tableButton').clone().attr('id', '')
+        $.ajax("{{ url_for('get_tables') }}", {
+                type: 'GET',
+                success: function (response, status, xmlHttpRequest) {
+                    console.log(response)
+                    let tables = response['tables']
+                    console.log(tables)
+                    for (table of tables){
+                        $(button).find('.table-button-data').text(table)
+                        $(button).appendTo(modalBody)
+                    }
+                },
+                error: function () {
+                    alert('Error!')
+                }
+            }
+        )
+    }
 </script>

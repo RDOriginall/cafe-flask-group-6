@@ -129,6 +129,8 @@ def comment():
         name = request.form['name']
         comment_text = request.form['comment']
         email = request.form['email']
-        return 'comment received!'
+        comment_obj = Comments(name, email, comment_text)
+        comment_obj.add_comment_to_db()
+        return f'Thank you {name} for your comment'
     else:
         return 'Wrong request!', 403

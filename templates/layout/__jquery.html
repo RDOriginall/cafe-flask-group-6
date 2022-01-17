@@ -104,11 +104,24 @@
 
     function orderToDataBase() {
         let items = $('.order-item').slice(0, $('.order-item').length - 1)
-        let data = {}
+        let itemsData = {}
         for (let item of items) {
-            data[$(item).find('.item-id').text()] = Number($(item).find('.item-number').text())
-            console.log($(item).find('.item-id').text(), $(item).find('.item-number').text())
+            let _id = $(item).find('.item-id').text()
+            itemsData[_id] = Number($(item).find('.item-number').text())
         }
-        console.log(data)
+        console.log(itemsData)
+        $.ajax({
+                url: '{{ url_for('add_order') }}',
+                type: 'POST',
+                data: itemsData,
+                success: function (response, status, xmlHttpRequest) {
+                    console.log("Order Added")
+                    alert(response)
+                },
+                error: function () {
+                    console.log('Error!')
+                }
+            }
+        )
     }
 </script>

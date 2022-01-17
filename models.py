@@ -248,6 +248,16 @@ class Table():
                 curs.execute("DELETE FROM manager WHERE table.id = %s;", (self.table_id))
         conn.close()
 
+    @classmethod
+    def get_all_tables(cls):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM tables;")
+                tables = curs.fetchall()
+        conn.close()
+        return tables
 
 class Category:
     def __init__(self, name):

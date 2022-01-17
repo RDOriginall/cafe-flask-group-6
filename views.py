@@ -160,7 +160,7 @@ def add_order():
 def get_tables():
     if request.method == 'GET':
         tables = Table.get_all_tables()
-        print(tables)
-        return tables
+        tables_json = {'tables': tables}
+        return tables_json
     else:
         return 'Wrong request!', 403

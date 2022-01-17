@@ -139,7 +139,8 @@ def comment():
 def add_order():
     if request.method == 'POST':
         items_data = dict(request.form)
-        table_id = 2
+        table_id = items_data['tableNumber']
+        print(table_id)
         manager_id = 1
         receipt = Reciept(table_id, manager_id)
         for item_id in items_data.keys():
@@ -150,8 +151,9 @@ def add_order():
                     items_data[item_id])
         receipt.add_to_db()
         for item_id in items_data.keys():
-            order = OrderList(item_id, items_data[item_id], receipt.reciept_id, manager_id)
-            order.add_to_database()
+            if item_id.isdigit():
+                order = OrderList(item_id, items_data[item_id], receipt.reciept_id, manager_id)
+                order.add_to_database()
         return "Order added successfully!"
     else:
         return 'Wrong request!', 403

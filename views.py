@@ -83,9 +83,9 @@ def manager_login():
         if username.check_username() and password.check_password():
             return render_template('dashboard.html')
         else:
-            return render_template('not_valid_input.html')
+            return render_template('not_valid_page.html')
     else:
-        return render_template('not_valid_request.html'), 403
+        return render_template('not_valid_page.html'), 403
 
 
 def edit_menu_item(item_id):

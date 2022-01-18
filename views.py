@@ -60,7 +60,7 @@ def add_manager():
 
 def dashboard():
     if request.method == 'GET':
-        
+
         return render_template('dashboard.html', )
     elif request.method == 'POST':
         return "Message received!\nThank you."
@@ -99,27 +99,27 @@ def manager_login():
         return render_template('not_valid_page.html'), 403
 
 
-def edit_menu_item(item_id):
-    if request.method == 'GET':
-        item = MenuItem.get_by_id(int(item_id))
-        data = {
-            'id': item_id,
-            'name': item.name,
-            'price': item.price,
-            'discount': item.discount,
-            'category': item.category_id
-        }
-        return render_template('edit_menu_item.html', data=data)
-    elif request.method == 'POST':
-        item = MenuItem.get_by_id(int(request.form.get('id')))
-        item.name = str(request.form.get('name'))
-        item.price = int(request.form.get('price'))
-        item.discount = float(request.form.get('discount'))
-        item.category_id = int(request.form.get('category'))
-        item.update_database()
-        return 'Item updated!', 201
-    else:
-        return 'Wrong request!', 403
+# def edit_menu_item(item_id):
+#     if request.method == 'GET':
+#         item = MenuItem.get_by_id(int(item_id))
+#         data = {
+#             'id': item_id,
+#             'name': item.name,
+#             'price': item.price,
+#             'discount': item.discount,
+#             'category': item.category_id
+#         }
+#         return render_template('edit_menu_item.html', data=data)
+#     elif request.method == 'POST':
+#         item = MenuItem.get_by_id(int(request.form.get('id')))
+#         item.name = str(request.form.get('name'))
+#         item.price = int(request.form.get('price'))
+#         item.discount = float(request.form.get('discount'))
+#         item.category_id = int(request.form.get('category'))
+#         item.update_database()
+#         return 'Item updated!', 201
+#     else:
+#         return 'Wrong request!', 403
 
 
 def delete_menu_item():
@@ -132,6 +132,7 @@ def delete_menu_item():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
+
 
 def comment():
     if request.method == 'POST':
@@ -176,9 +177,10 @@ def get_tables():
     else:
         return 'Wrong request!', 403
 
+
 def category():
     if request.method == 'GET':
-        return render_template('category-cash.html',categorylist=category_list())
+        return render_template('category-cash.html', categorylist=category_list())
     elif request.method == 'POST':
         item_id = int(request.form.get('id'))
         item = MenuItem.get_by_id(item_id)
@@ -186,13 +188,40 @@ def category():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
-    
+
+
 def reciept():
     if request.method == 'GET':
         return render_template('reciept.html')
     else:
         return render_template('not_valid_page.html'), 403
-    
+
+
 def menu_item():
     return render_template('menu_item.html')
 
+
+def cashier_menu():
+    if request.method == 'GET':
+        items = MenuItem.get_all_items()
+        return render_template('layout/_cashier_menu.html', items=items)
+    else:
+        return 'Wrong request!', 403
+
+
+def edit_menu_item():
+    if request.method == 'POST':
+        _id = request.form['_id']
+        name = request.form['name']
+        price = request.form['price']
+        discount = request.form['discount']
+        category = request.form['category']
+        item = MenuItem.get_by_id(int(_id))
+        item.name = name
+        item.price = price
+        item.discount = discount
+        item.category_id = category
+        item.update_database()
+        return f"Item by id={_id} edited successfully!"
+    else:
+        return 'Wrong request!', 403

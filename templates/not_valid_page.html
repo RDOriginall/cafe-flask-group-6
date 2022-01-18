@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include 'layout/__stylesheet_manager.html' %}
-    <title>Document</title>
+    <title>invalid input or request</title>
+    <style>
+        body{
+            background-image: url("https://wallpapershome.com/images/wallpapers/food-1920x1080-still-life-vegetables-bread-12115.jpg");
+        }
+    </style>
 </head>
 <body>
-    <div class="text-center"><h1>There is no response for this request!</h1><h2>Plaese try another way..</h2></div>
+    <div style="padding-top: 400px;">
+        <div class="text-center m-2"><h1>There is no response for this request!</h1><h2>Plaese try again..</h2></div>
+        <div class="text-center m-2"><a role="button" class="btn btn-primary m-2" href="{{ url_for('index') }}">Back to home!</a></div>
+    </div>
 </body>
 </html>

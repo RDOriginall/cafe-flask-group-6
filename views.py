@@ -60,8 +60,8 @@ def add_manager():
 
 def dashboard():
     if request.method == 'GET':
-        list_not_pay = recipt_not_pay()
-        return render_template('dashboard.html', list_not_pay=list_not_pay)
+        
+        return render_template('dashboard.html', )
     elif request.method == 'POST':
         return "Message received!\nThank you."
 
@@ -78,13 +78,22 @@ def manager_login():
     if request.method == 'GET':
         return render_template('manager_login.html')
     elif request.method == 'POST':
-        if request.form.get('username') != "":
-            username = request.form.get('username')
-            password = request.form.get('password')
-            if username.check_username() and password.check_password():
-                return render_template('dashboard.html')
+        phone_number = request.form.get('phone_number')
+        password = request.form.get('password')
+        if Manager.check_phone(phone_number):
+            if Manager.check_password(phone_number, password):
+                m = Manager.get_by_phone(phone_number)
+                data = {
+                    'first_name': m.first_name,
+                    'last_name': m.last_name,
+                    'phone_number': m.phone_number,
+                    'email': m.email,
+                }
+                return render_template('dashboard.html', data=data)
             else:
                 return render_template('not_valid_page.html')
+        else:
+            return render_template('not_valid_page.html')
     else:
         return render_template('not_valid_page.html'), 403
 
@@ -132,3 +141,9 @@ def category():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
+    
+def reciept():
+    if request.method == 'GET':
+        return render_template('reciept.html')
+    else:
+        return render_template('not_valid_page.html'), 403

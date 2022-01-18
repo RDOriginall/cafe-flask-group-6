@@ -147,3 +147,6 @@ def reciept():
         return render_template('reciept.html')
     else:
         return render_template('not_valid_page.html'), 403
+    
+def menu_item():
+    return render_template('menu_item.html')

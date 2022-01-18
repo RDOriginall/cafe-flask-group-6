@@ -161,7 +161,7 @@ def add_order():
 
 def get_tables():
     if request.method == 'GET':
-        tables = Table.get_all_tables()
+        tables = Table.get_free_tables()
         tables_json = {'tables': tables}
         return tables_json
     else:

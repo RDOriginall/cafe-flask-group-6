@@ -50,3 +50,10 @@ def order_list(recipt_id):
     for x in list_order:
         list.append({'name': x[0], 'price': x[1], 'number': x[2], 'total': x[1] * x[2]})
     return list
+
+def category_list():
+    list_category=Category.show_categories()
+    list=[]
+    for x in list_category:
+        list.append({'id': x[0], 'name': x[1]})
+    return list

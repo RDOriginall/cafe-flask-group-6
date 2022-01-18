@@ -120,3 +120,14 @@ def delete_menu_item():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
+
+def category():
+    if request.method == 'GET':
+        return render_template('category-cash.html',categorylist=category_list())
+    elif request.method == 'POST':
+        item_id = int(request.form.get('id'))
+        item = MenuItem.get_by_id(item_id)
+        item.delete_from_database()
+        return 'Item deleted!'
+    else:
+        return 'Wrong request!', 403

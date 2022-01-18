@@ -10,18 +10,23 @@
 </head>
 <body>
     {% block body %}
-{% include 'layout/__nav_manager.html' %}
+<div class="container-fluid pt-5">  
+  <div class="text-center"><h2>Welcome to chashier panel</h2></div>
+  <div class="text-center"><h4>Please login!</h4></div>
+</div>
+  <div class="container">
 <form method="POST" action="{{ url_for('manager_login') }}">
-    <div class="form-group">
-      <label for="phone_number">phone_number</label>
+    <div class="form-group text-center mt-4">
+      <label for="phone_number"><b>phone_number</b></label>
       <input type="text" name="phone_number" class="form-control" id="phone_number" placeholder="09123456789">
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
+    <div class="form-group text-center mt-4">
+      <label for="password"><b>Password</b></label>
       <input type="password" name="password" class="form-control" id="password" placeholder="Password">
     </div>
-    <input type="submit" value="Login" class="btn btn-primary">
+    <div class="text-center p-4 mb-5"><input type="submit" value="Login" class="btn btn-primary"></div>
 </form>
+</div>
 {% include 'layout/__footer_manager.html' %}
 {% endblock %}
 </body>

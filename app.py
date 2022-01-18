@@ -16,6 +16,7 @@ app.add_url_rule('/delete_menu_item/', 'delete_menu_item', delete_menu_item, met
 app.add_url_rule('/cashier/login', 'manager_login', manager_login, methods=['GET', 'POST'])
 app.add_url_rule('/cashier/categories', 'category-cash', category, methods=['GET', 'POST'])
 app.add_url_rule('/cashier/reciept', 'reciept', reciept, methods=['GET'])
+app.add_url_rule('/cashier/menu_item', 'menu_item', menu_item, methods=['GET'])
 
 
 if __name__ == '__main__':

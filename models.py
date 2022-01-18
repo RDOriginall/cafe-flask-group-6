@@ -28,7 +28,8 @@ class Manager:
         with conn:
             with conn.cursor() as curs:
                 curs.execute("SELECT * FROM manager WHERE manager.id = %s;", (obj_id,))
-                obj = cls(*curs.fetchone())
+                data = curs.fetchone()
+                obj = cls(data[1], data[2], data[3], data[4], data[5])
         conn.close()
         return obj
 
@@ -133,7 +134,7 @@ class MenuItem:
         self.manager_id = manager_id
 
     def get_prices(self):
-        return self.price, self.price * (self.discount/100)
+        return self.price, self.price * (self.discount / 100)
 
     def add_to_database(self):
         conn = MenuItem.start_database()
@@ -258,6 +259,24 @@ class Table():
                 tables = curs.fetchall()
         conn.close()
         return [table[0] for table in tables]
+
+    @classmethod
+    def get_free_tables(cls):
+        conn = psycopg2.connect(dbname="pwqucdjl", user="pwqucdjl", password="Q4RNLRzY-lbffdzIJ7hTgxSC2yg7hQ9x",
+                                host='john.db.elephantsql.com', port='5432')
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM reciept;")
+                reciepts = curs.fetchall()
+        conn.close()
+        tables = cls.get_all_tables()
+        for item in reciepts:
+            if item[4] == False:
+                table_id = item[1]
+                if table_id in tables:
+                    tables.remove(table_id)
+        return tables
+
 
 class Category:
     def __init__(self, name):

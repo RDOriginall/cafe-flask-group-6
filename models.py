@@ -144,6 +144,16 @@ class MenuItem:
         # logging
 
     @classmethod
+    def get_all_items(cls):
+        conn = cls.start_database()
+        with conn:
+            with conn.cursor() as curs:
+                curs.execute("SELECT * FROM menu_item;")
+                data = curs.fetchall()
+        conn.close()
+        return data
+
+    @classmethod
     def get_by_id(cls, obj_id):
         conn = cls.start_database()
         with conn:

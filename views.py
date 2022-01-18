@@ -60,8 +60,8 @@ def add_manager():
 
 def dashboard():
     if request.method == 'GET':
-        list_not_pay = recipt_not_pay()
-        return render_template('dashboard.html', list_not_pay=list_not_pay)
+        
+        return render_template('dashboard.html', )
     elif request.method == 'POST':
         return "Message received!\nThank you."
 
@@ -79,14 +79,24 @@ def manager_login():
     if request.method == 'GET':
         return render_template('manager_login.html')
     elif request.method == 'POST':
-        username = request.form.get('username')
+        phone_number = request.form.get('phone_number')
         password = request.form.get('password')
-        if username.check_username() and password.check_password():
-            return render_template('dashboard.html')
+        if Manager.check_phone(phone_number):
+            if Manager.check_password(phone_number, password):
+                m = Manager.get_by_phone(phone_number)
+                data = {
+                    'first_name': m.first_name,
+                    'last_name': m.last_name,
+                    'phone_number': m.phone_number,
+                    'email': m.email,
+                }
+                return render_template('dashboard.html', data=data)
+            else:
+                return render_template('not_valid_page.html')
         else:
-            return render_template('not_valid_input.html')
+            return render_template('not_valid_page.html')
     else:
-        return render_template('not_valid_request.html'), 403
+        return render_template('not_valid_page.html'), 403
 
 
 def edit_menu_item(item_id):
@@ -122,7 +132,6 @@ def delete_menu_item():
         return 'Item deleted!'
     else:
         return 'Wrong request!', 403
-
 
 def comment():
     if request.method == 'POST':
@@ -166,3 +175,24 @@ def get_tables():
         return tables_json
     else:
         return 'Wrong request!', 403
+
+def category():
+    if request.method == 'GET':
+        return render_template('category-cash.html',categorylist=category_list())
+    elif request.method == 'POST':
+        item_id = int(request.form.get('id'))
+        item = MenuItem.get_by_id(item_id)
+        item.delete_from_database()
+        return 'Item deleted!'
+    else:
+        return 'Wrong request!', 403
+    
+def reciept():
+    if request.method == 'GET':
+        return render_template('reciept.html')
+    else:
+        return render_template('not_valid_page.html'), 403
+    
+def menu_item():
+    return render_template('menu_item.html')
+

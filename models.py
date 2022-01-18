@@ -62,68 +62,43 @@ class Manager:
                               self.manager_id))
         conn.close()
 
-    def check_phone(self, phone):
+    @classmethod
+    def check_phone(cls, phone):
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
-                curs.execute("SELECT phone_number FROM manager")
+                curs.execute("SELECT phone_number FROM manager;")
                 all_phones = curs.fetchall()
         conn.close()
-
-        if self.phone in all_phones:
+        if phone in [item[0] for item in all_phones]:
             return True
         else:
-            return f"invalid phone number please register!!"
+            return False
 
-    def check_password(self, password):
+    @classmethod
+    def check_password(cls, phone, password):
         conn = Manager.start_database()
         with conn:
             with conn.cursor() as curs:
-                curs.execute("SELECT password FROM manager")
-                all_passwords = curs.fetchall()
-        if password in all_passwords:
-            return True
-        else:
-            return f"Your username or password is incorrect!"
-
-    def check_phone(self, phone):
-        conn = Manager.start_database()
-        with conn:
-            with conn.cursor() as curs:
-                curs.execute("SELECT phone_number FROM manager")
-                all_phones = curs.fetchall()
+                curs.execute("SELECT password FROM manager where manager.phone_number = %s;", (phone, ))
+                target_password = curs.fetchone()
         conn.close()
-
-        if self.phone in all_phones:
+        if password == target_password[0]:
             return True
         else:
-            print("invalid phone number please register!!")
             return False
 
-    def check_username(self, username):
-        conn = Manager.start_database()
+    @classmethod
+    def get_by_phone(cls, phone_number):
+        conn = cls.start_database()
         with conn:
             with conn.cursor() as curs:
-                curs.execute("SELECT username FROM manager")
-                all_usernames = curs.fetchall()
-        if self.username in all_usernames:
-            return True
-        else:
-            print("Your username or password is incorrect!")
-            return False
-
-    def check_password(self, password):
-        conn = Manager.start_database()
-        with conn:
-            with conn.cursor() as curs:
-                curs.execute("SELECT password FROM manager")
-                all_passwords = curs.fetchall()
-        if self.password in all_passwords:
-            return True
-        else:
-            print("Your username or password is incorrect!")
-            return False
-
+                curs.execute("SELECT * FROM manager WHERE manager.phone_number = %s;", (phone_number,))
+                data = curs.fetchone()
+                obj = cls(data[1], data[2], data[3], data[4], data[5])
+        conn.close()
+        return obj
+        
 
 class MenuItem:
     def __init__(self, name, price, discount, category_id, manager_id) -> None:

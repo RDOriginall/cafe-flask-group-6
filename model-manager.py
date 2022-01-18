@@ -1,7 +1,7 @@
 from models import Manager
 import argparse
 
-if __name == "__main__":
+if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Press -nf to start!")
     parser.add_argument("-fn", "--fname", nargs="+", required=True, help="Insert -fn or --fname to write your first name!")

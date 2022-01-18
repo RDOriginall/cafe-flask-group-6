@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% include 'layout/__stylesheet_manager.html' %}
+    <title>Cafe Menu Items</title>
+</head>
+<body>
+{% include 'layout/__nav_manager.html' %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="container">
+            <div class="row m-1 p-3 bg-warning rounded-pill align-items-center justify-content-center">
+                <div class="col-1 item-id">
+                    Id
+                </div>
+                <div class="col item-name">
+                    Item-Name
+                </div>
+                <div class="col item-price">
+                    Price
+                </div>
+                <div class="col item-discount">
+                    Discount
+                </div>
+                <div class="col-1 item-category">
+                    Category
+                </div>
+                <div class="col-1 me-2 w-auto"></div>
+                <div class="col-1 w-auto">
+
+                </div>
+            </div>
+            {% for item in items %}
+                <div class="row m-1 p-3 bg-info rounded-pill align-items-center justify-content-center">
+                    <div class="col-1 item-id">
+                        {{ item[0] }}
+                    </div>
+                    <div class="col item-name">
+                        {{ item[1] }}
+                    </div>
+                    <div class="col item-price">
+                        {{ item[2] }}
+                    </div>
+                    <div class="col item-discount">
+                        {{ item[3] }}
+                    </div>
+                    <div class="col-1 item-category">
+                        {{ item[4] }}
+                    </div>
+                    <button type="button" onclick="editItem(this)" class="col-1 me-2 btn btn-success w-auto"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Edit
+                    </button>
+                    <div class="col-1 btn btn-danger w-auto">
+                        <i class="fa fa-trash"></i>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include 'layout/__footer_manager.html' %}
+<div class="container" style="">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #6351CE">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row" style="display: none;">
+                            <label for="idid">id</label>
+                            <input type="text" id="idid" name="idid" value="">
+                        </div>
+                        <div class="row">
+                            <label for="fname">Name</label>
+                            <input type="text" id="name" name="name" value="">
+                        </div>
+                        <div class="row">
+                            <label for="price">Price</label>
+                            <input type="text" id="price" name="price" value="">
+                        </div>
+                        <div class="row">
+                            <label for="discount">Discount</label>
+                            <input type="text" id="discount" name="discount" value="">
+                        </div>
+                        <div class="row">
+                            <label for="category">Category</label>
+                            <input type="text" id="category" name="category" value="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="background-color: #6351CE">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="saveEditItem(this)">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: none;">
+
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function editItem(elem) {
+        let item = $(elem).parent()
+        let _id = item.find('.item-id').text()
+        let name = item.find('.item-name').text()
+        let price = item.find('.item-price').text()
+        let discount = item.find('.item-discount').text()
+        let category = item.find('.item-category').text()
+        $("#idid").val(_id.trim())
+        $('#name').val(name.trim())
+        $('#price').val(price.trim())
+        $('#discount').val(discount.trim())
+        $('#category').val(category.trim())
+    }
+
+    function saveEditItem(elem) {
+        $.ajax({
+                url: '{{ url_for('edit_menu_item') }}',
+                type: 'POST',
+                data: {
+                    '_id': $('#idid').val(),
+                    'name': $('#name').val(),
+                    'price': $('#price').val(),
+                    'discount': $('#discount').val(),
+                    'category': $('#category').val(),
+                },
+                success: function (response, status, xmlHttpRequest) {
+                    console.log("Response Received")
+                    alert(response)
+                },
+                error: function () {
+                    console.log('Error!')
+                }
+            }
+        )
+    }
+</script>
+</html>

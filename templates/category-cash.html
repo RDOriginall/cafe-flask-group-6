@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,31 +9,42 @@
 <body>
 {% block body %}
 {% include 'layout/__nav_manager.html' %}
-<div class="">
-    <div class="d-flex justify-content-start" style="margin-left: 1%">
-        <a>list category you can click to edit or delete or show </a>
-    </div>
-    <div>
-        {% for item in categorylist %}
-        <tr>
-            <button class="btn btn-link mx-auto">
-                {{ item.id }}
-                <a>=</a>
-                {{ item.name }}
-            </button>
-            <th>
-            </th>
-            <td>
-            </td>
-        </tr>
-        {% endfor %}
-        </table>
+<div class="d-flex justify-content-center flex-nowrap" style="margin-top: 4em ; margin-bottom: 4em">
+    <a>new categories:</a>
+        <input type="text" id="text_nex_cat" class="order-3 p-2" style="width: 45em" placeholder="new categories">
+        <input type="button" value="add" onclick="add_categories(text_nex_cat.innerText)"
+               class="btn btn-success text-center order-4  mx-1"
+               style="width: 9em">
+</div>
 
+<div class="d-flex justify-content-start" style="margin-left: 1%">
+    <a>list category you can click to edit or delete or show </a>
+</div>
+
+<div class="row flex-wrap">
+    {% for item in categorylist %}
+    <div class="p-3">
+        {{ item.id }}
+        <a>=</a>
+        {{ item.name }}
+        <input type="button" value="EDIT" onclick="edit(item)" class="btn btn-light text-center mx-1"
+               style="width: 6em">
+        <input type="button" value="delete" onclick="delet(item)" class="btn btn-danger text-center mx-1"
+               style="width: 6em">
+        <input type="button" value="show list" onclick="showlist(item)" class="btn btn-success text-center mx-1"
+               style="width: 6em">
     </div>
+    {% endfor %}
 </div>
-</div>
+
 {% include 'layout/__footer_manager.html' %}
 {% endblock %}
 
 </body>
+
 </html>
+<script>
+    function add_categories(name){
+        alert(name)
+    }
+</script>

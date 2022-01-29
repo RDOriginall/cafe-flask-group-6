@@ -65,11 +65,12 @@ def dashboard():
     elif request.method == 'POST':
         return "Message received!\nThank you."
 
+
 def print_reciept(reciept_id):
     if request.method == 'GET':
         list_order = order_list(reciept_id)
-        total_list=recipt_to_pay(reciept_id)
-        return render_template('reciept.html', order= list_order,total=total_list)
+        total_list = recipt_to_pay(reciept_id)
+        return render_template('reciept.html', order=list_order, total=total_list)
     elif request.method == 'POST':
         return "Message received!\nThank you."
 
@@ -93,9 +94,9 @@ def edit_menu_item(item_id):
         item = MenuItem.get_by_id(int(item_id))
         data = {
             'id': item_id,
-            'name':item.name,
-            'price':item.price,
-            'discount':item.discount,
+            'name': item.name,
+            'price': item.price,
+            'discount': item.discount,
             'category': item.category_id
         }
         return render_template('edit_menu_item.html', data=data)
@@ -109,7 +110,8 @@ def edit_menu_item(item_id):
         return 'Item updated!', 201
     else:
         return 'Wrong request!', 403
-    
+
+
 def delete_menu_item():
     if request.method == 'GET':
         return render_template('delete_menu_item.html')
@@ -121,13 +123,20 @@ def delete_menu_item():
     else:
         return 'Wrong request!', 403
 
+
 def category():
     if request.method == 'GET':
-        return render_template('category-cash.html',categorylist=category_list())
+        return render_template('category-cash.html', categorylist=category_list())
     elif request.method == 'POST':
-        item_id = int(request.form.get('id'))
-        item = MenuItem.get_by_id(item_id)
-        item.delete_from_database()
-        return 'Item deleted!'
-    else:
-        return 'Wrong request!', 403
+        type=request.form['type']
+        if type=='ADD':
+            name = request.form['name']
+            new = Category(name)
+            new.add_to_db()
+            return render_template('category-cash.html', categorylist=category_list())
+        if type=='DELETE':
+            ID = request.form['ID']
+            Category.delete_from_db_by_id(ID)
+            return render_template('category-cash.html', categorylist=category_list())
+
+

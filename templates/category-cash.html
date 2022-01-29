@@ -5,18 +5,21 @@
     <title>Title</title>
     {% include 'layout/__stylesheet_casheyer.html' %}
 
+
 </head>
 <body>
 {% block body %}
 {% include 'layout/__nav_manager.html' %}
 <div class="d-flex justify-content-center flex-nowrap" style="margin-top: 4em ; margin-bottom: 4em">
     <a>new categories:</a>
-        <input type="text" id="text_nex_cat" class="order-3 p-2" style="width: 45em" placeholder="new categories">
-        <input type="button" value="add" onclick="add_categories(text_nex_cat.innerText)"
-               class="btn btn-success text-center order-4  mx-1"
-               style="width: 9em">
+    <input type="text" id="text_nex_cat" class="order-3 p-2" style="width: 45em" placeholder="new categories" value="">
+    <input type="button" id="click_add_categorei" value="add" onclick=""
+           class="btn btn-success text-center order-4  mx-1"
+           style="width: 9em">
 </div>
-
+<div>
+    <img src="IMG/lofing_gif.gif">
+</div>
 <div class="d-flex justify-content-start" style="margin-left: 1%">
     <a>list category you can click to edit or delete or show </a>
 </div>
@@ -27,11 +30,11 @@
         {{ item.id }}
         <a>=</a>
         {{ item.name }}
-        <input type="button" value="EDIT" onclick="edit(item)" class="btn btn-light text-center mx-1"
+        <input type="button" value="EDIT" onclick="say_hello()" class="btn btn-light text-center mx-1"
                style="width: 6em">
-        <input type="button" value="delete" onclick="delet(item)" class="btn btn-danger text-center mx-1"
+        <input type="button" value="delete" onclick="delete_item('{{item.id}}')" class="btn btn-danger text-center mx-1"
                style="width: 6em">
-        <input type="button" value="show list" onclick="showlist(item)" class="btn btn-success text-center mx-1"
+        <input type="button" value="show list" onclick="say_hello()" class="btn btn-success text-center mx-1"
                style="width: 6em">
     </div>
     {% endfor %}
@@ -43,8 +46,46 @@
 </body>
 
 </html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script>
-    function add_categories(name){
-        alert(name)
+    $("#click_add_categorei").click(function () {
+        alert("please wait...")
+        $.ajax({
+            url: "{{url_for('category-cash')}}",
+            type: "POST",
+            data: {
+                'type': 'ADD',
+                'name': $("#text_nex_cat").val()
+            },
+            success: function (html) {
+                location.reload();
+            }
+        })
+    })
+
+    function delete_item(id) {
+        alert("please wait...")
+        $.ajax({
+            url: "{{url_for('category-cash')}}",
+            type: "POST",
+            data: {
+                'type': 'DELETE',
+                'ID': id,
+            }
+        })
+
     }
+
+
 </script>
